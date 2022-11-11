@@ -1,17 +1,18 @@
-package Elmaia;
+package EL_MAIA;
 
 public class Comanda {
 
+    // Variáveis
     private String consumo;
     private double valor;
     
+    // Funções
     void listarConsumo(String consumo){
 
         System.out.println(" --- Lista de Consumo --- ");
         System.out.println(consumo);
 
     }
-
     double calcular10Porcento(double valor){
         return(valor*0.10);
     }
