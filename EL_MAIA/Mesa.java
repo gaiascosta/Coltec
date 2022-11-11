@@ -28,17 +28,22 @@ public class Mesa
 
     public boolean reservar()
     {
-        System.out.printf("Deseja fazer uma reserva? \n[0] Não\t[1] Sim\t:");
+        System.out.printf("Deseja fazer uma reserva? \n[0] Não\t[1] Sim\t: ");
         int res = esc.nextInt();
         if (res == 1)
         {
             this.reserva = true;
-            return (true);
+            return(true);
         }
-        else
+        else if (res == 0)
         {
             this.reserva = false;
-            return (false);
+            return(false);
+        }
+        else 
+        {
+            System.out.println("\nINVALIDO\n");
+            return(false);
         }
     }
 }
