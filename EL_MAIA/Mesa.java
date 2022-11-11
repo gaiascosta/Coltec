@@ -1,7 +1,9 @@
 package EL_MAIA;
+import java.util.Scanner;
 
 public class Mesa 
 {
+    Scanner esc = new Scanner(System.in);
     private int numero_mesa;
     public int getNumero_mesa() {
         return numero_mesa;
@@ -24,9 +26,11 @@ public class Mesa
         this.reserva = reserva;
     }
 
-    public boolean reservar(boolean res)
+    public boolean reservar()
     {
-        if (res == true)
+        System.out.printf("Deseja fazer uma reserva? \n[0] Não\t[1] Sim\t:");
+        int res = esc.nextInt();
+        if (res == 1)
         {
             this.reserva = true;
             return (true);
