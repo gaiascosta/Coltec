@@ -1,27 +1,43 @@
 package EL_MAIA;
-import java.util.Scanner;
+import java.util.ArrayList;
 
 public class Mesa 
 {
-    Scanner esc = new Scanner(System.in);
+    // Lista de Clientes
+    ArrayList<Cliente> cliente = new ArrayList<Cliente>();
+
+    // Variáveis
     private int numero_mesa;
+
+    // Getters and Setters
+    public int getNumero_mesa() {
+        return numero_mesa;
+    }
+    public void setNumero_mesa(int numero_mesa) {
+        this.numero_mesa = numero_mesa;
+    }
     private String data;
+    public String getData() {
+        return data;
+    }
+    public void setData(String data) {
+        this.data = data;
+    }
     private boolean reserva;
-    
-    public boolean reservar()
+    public boolean isReserva() {
+        return reserva;
+    }
+    public void setReserva(boolean reserva) {
+        this.reserva = reserva;
+    }
+
+    // Funções
+    public boolean reservar(int res)
     {
-        System.out.printf("Deseja reservar a mesa " + numero_mesa + "? \n[0] Não\t[1] Sim\t: ");
-        int res = esc.nextInt();
-        
         if (res == 1)
         {
-            if(this.reserva != true){
-                this.reserva = true;
-                return(true);
-            } else{
-                System.out.println("Esta mesa ja foi reservada :(");
-                return(false);
-            }
+            this.reserva = true;
+            return(true);
         }
         else if (res == 0)
         {
@@ -30,29 +46,10 @@ public class Mesa
         }
         else 
         {
-            System.out.println("\nINVALIDO\n");
+            this.reserva = false;
+            System.out.println("\n*** INVALIDO ***\n");
             return(false);
         }
     }
-
-    //Getters & Setters
-    public int getNumero_mesa() {
-        return numero_mesa;
-    }
-    public void setNumero_mesa(int numero_mesa) {
-        this.numero_mesa = numero_mesa;
-    }
-    public String getData() {
-        return data;
-    }
-    public void setData(String data) {
-        this.data = data;
-    }
-    public boolean isReserva() {
-        return reserva;
-    }
-    public void setReserva(boolean reserva) {
-        this.reserva = reserva;
-    }
-
+    
 }
