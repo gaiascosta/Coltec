@@ -15,7 +15,7 @@ public class Restaurante
     public String getEsdereco() {
         return endereco;
     }
-    public void setEsdereco(String endereco) {
+    public void setEndereco(String endereco) {
         this.endereco = endereco;
     }
 }
