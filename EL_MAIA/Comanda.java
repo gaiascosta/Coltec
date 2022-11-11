@@ -1,18 +1,25 @@
 package EL_MAIA;
 
+import java.util.ArrayList;
+
 public class Comanda {
 
-    // Variáveis
-    private String consumo;
     private double valor;
-    
-    // Funções
+
+    //Lista de consumo
+    ArrayList<String> consumo = new ArrayList<>();
+
+
+
     void listarConsumo(String consumo){
 
         System.out.println(" --- Lista de Consumo --- ");
+
         System.out.println(consumo);
 
+
     }
+
     double calcular10Porcento(double valor){
         return(valor*0.10);
     }
@@ -28,12 +35,10 @@ public class Comanda {
     public void setValor(double valor) {
         this.valor = valor;
     }
-    public String getConsumo() {
-        return consumo;
+
+    public void addItem(String Item){
+        this.consumo.add(Item);
     }
-    
-    public void setConsumo(String consumo) {
-        this.consumo = consumo;
-    }
-    
+
 }
+
