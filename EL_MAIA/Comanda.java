@@ -4,8 +4,7 @@ public class Comanda {
 
     private String consumo;
     private double valor;
-
-
+    
     void listarConsumo(String consumo){
 
         System.out.println(" --- Lista de Consumo --- ");
