@@ -9,13 +9,10 @@ public class Comanda {
     ArrayList<String> consumo = new ArrayList<>();
 
     // Funções
-    void listarConsumo(String consumo){
-
+    void listarConsumo(String consumo)
+    {
         System.out.println(" --- Lista de Consumo --- ");
-
         System.out.println(consumo);
-
-
     }
 
     double calcular10Porcento(double valor){
