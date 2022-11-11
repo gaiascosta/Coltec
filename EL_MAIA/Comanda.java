@@ -1,16 +1,14 @@
 package EL_MAIA;
-
 import java.util.ArrayList;
 
 public class Comanda {
 
     private double valor;
 
-    //Lista de consumo
+    // Lista de consumo
     ArrayList<String> consumo = new ArrayList<>();
 
-
-
+    // Funções
     void listarConsumo(String consumo){
 
         System.out.println(" --- Lista de Consumo --- ");
