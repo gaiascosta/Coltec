@@ -14,6 +14,7 @@ public class Menu
         System.out.printf("Deseja fazer uma reserva? \n[0] Não\t[1] Sim\t: ");
         int res = esc.nextInt();
         mesa.reservar(res);
+        this.restaurante.inicializar_mesas();
     }
     public void menu_Cardapio()
     {
@@ -45,6 +46,7 @@ public class Menu
     public void fazer_pedido(int n_mesa)
     {
         String pedido = esc.next(); int i = 0;
+        int pedidinho = Integer.parseInt(pedido);
         while(i < this.restaurante.mesa.size())
         {
             if (this.restaurante.mesa.get(i).getNumero_mesa() == n_mesa)
@@ -60,95 +62,95 @@ public class Menu
         }
         
 
-        while (pedido != "0")
+        while (pedidinho != 0)
         {
-            switch(pedido)
+            switch(pedidinho)
             {
-                case "1":
+                case 1:
                 restaurante.mesa.get(i).getComanda().valor += 2.00;
                 restaurante.mesa.get(i).getComanda().consumo.add("Água Atômica 500ml");
                 break;
 
-                case "2":
+                case 2:
                 restaurante.mesa.get(i).getComanda().valor += 4.50;
                 restaurante.mesa.get(i).getComanda().consumo.add("Limonada Suína");
                 break;
 
-                case "3":
+                case 3:
                 restaurante.mesa.get(i).getComanda().valor += 5.50;
                 restaurante.mesa.get(i).getComanda().consumo.add("Coca");
                 break;
 
-                case "4":
+                case 4:
                 restaurante.mesa.get(i).getComanda().valor += 4.90;
                 restaurante.mesa.get(i).getComanda().consumo.add("Leite com Polvo Maltino");
                 break;
 
-                case "5":
+                case 5:
                 restaurante.mesa.get(i).getComanda().valor += 3.00;
                 restaurante.mesa.get(i).getComanda().consumo.add("Suco de Abaxaqui");
                 break;
 
-                case "6":
+                case 6:
                 restaurante.mesa.get(i).getComanda().valor += 4.50;
                 restaurante.mesa.get(i).getComanda().consumo.add("Suco de Frutas Críticas 300ml");
                 break;
 
-                case "7":
+                case 7:
                 restaurante.mesa.get(i).getComanda().valor += 16.00;
                 restaurante.mesa.get(i).getComanda().consumo.add("Leite de Amnésia");
                 break;
 
-                case "8":
+                case 8:
                 restaurante.mesa.get(i).getComanda().valor += 28.00;
                 restaurante.mesa.get(i).getComanda().consumo.add("Filé Miau");
                 break;
 
-                case "9":
+                case 9:
                 restaurante.mesa.get(i).getComanda().valor += 11.50;
                 restaurante.mesa.get(i).getComanda().consumo.add("Batata com molho Barbie Kill");
                 break;
 
-                case "10":
+                case 10:
                 restaurante.mesa.get(i).getComanda().valor += 27.00;
                 restaurante.mesa.get(i).getComanda().consumo.add("Bife alí namesa");
                 break;
 
-                case "11":
+                case 11:
                 restaurante.mesa.get(i).getComanda().valor += 15.50;
                 restaurante.mesa.get(i).getComanda().consumo.add("Macarrão ao alho e ódio");
                 break;
 
-                case "12":
+                case 12:
                 restaurante.mesa.get(i).getComanda().valor += 10.00;
                 restaurante.mesa.get(i).getComanda().consumo.add("Feijão Torpedo");
                 break;
 
-                case "13":
+                case 13:
                 restaurante.mesa.get(i).getComanda().valor += 10.00;
                 restaurante.mesa.get(i).getComanda().consumo.add("Arroz com carne morrida");
                 break;
 
-                case "14":
+                case 14:
                 restaurante.mesa.get(i).getComanda().valor += 8.00;
                 restaurante.mesa.get(i).getComanda().consumo.add("X & Queique");
                 break;
 
-                case "15":
+                case 15:
                 System.out.println("*** Esgotado ***");
                 break;
 
-                case "16":
+                case 16:
                 restaurante.mesa.get(i).getComanda().valor += 4.00;
                 restaurante.mesa.get(i).getComanda().consumo.add("Pudim de Leite Condenado");
                 break;
 
-                case "17":
+                case 17:
                 restaurante.mesa.get(i).getComanda().valor += 13.00;
                 restaurante.mesa.get(i).getComanda().consumo.add("Pácomê");
                 break;
 
-                case "18":
+                case 18:
                 restaurante.mesa.get(i).getComanda().valor += 2.50;
                 restaurante.mesa.get(i).getComanda().consumo.add("Sonho de Falsa");
                 break;
@@ -160,9 +162,9 @@ public class Menu
 
             }
             pedido = esc.next();
+            pedidinho = Integer.parseInt(pedido);
             
         }
         System.out.println("Obrigada por comprar no Buchinho Cheio");
     }
 }
-
