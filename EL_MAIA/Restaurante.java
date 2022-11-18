@@ -2,10 +2,14 @@ package EL_MAIA;
 
 public class Restaurante 
 {
-    private String nome;
-    private String endereco;
+    //Lista de Mesas
+    ArrayList<Mesa> mesa = new ArrayList<Mesa>();
 
-    //Getters & Setters
+    // Variáveis
+    private String nome;
+    private String esdereco;
+    
+    // Getters and Setters
     public String getNome() {
         return nome;
     }
@@ -13,9 +17,9 @@ public class Restaurante
         this.nome = nome;
     }
     public String getEsdereco() {
-        return endereco;
+        return esdereco;
     }
-    public void setEndereco(String endereco) {
-        this.endereco = endereco;
+    public void setEndereco(String esdereco) {
+        this.esdereco = esdereco;
     }
 }
