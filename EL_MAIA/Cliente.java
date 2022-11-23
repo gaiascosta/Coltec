@@ -2,16 +2,17 @@ package EL_MAIA;
 
 public class Cliente 
 {
+    // Variáveis
     private String nome;
-    private String email;
-    
-    //Getters & Setters
+
+    // Funções
     public String getNome() {
         return nome;
     }
     public void setNome(String nome) {
         this.nome = nome;
     }
+    private String email;
     public String getEmail() {
         return email;
     }
