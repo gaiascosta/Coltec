@@ -1,6 +1,6 @@
 package EL_MAIA;
-import java.util.Scanner;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Mesa 
 {
@@ -10,8 +10,15 @@ public class Mesa
     // Variáveis
     private int numero_mesa;
     private String data;
-    private boolean reserva = false;
+    private Comanda comanda = new Comanda();
+    private boolean reserva;
 
+    public Comanda getComanda() {
+        return comanda;
+    }
+    public void setComanda(Comanda comanda) {
+        this.comanda = comanda;
+    }
     // Getters and Setters
     public int getNumero_mesa() {
         return numero_mesa;
@@ -33,38 +40,17 @@ public class Mesa
     }
 
     // Funções
-    public boolean reservar(int res)
+    public boolean reservar()
     {
-        Scanner esc = new Scanner(System.in);
-        System.out.println("Digite o numero de pessoas: ");
-        int nPessoas = esc.nextInt();
-        Cliente cliente = new Cliente();
-
-        if (res == 1)
+        if (this.reserva == true)
+        {
+            return false;
+        }
+        else
         {
             this.reserva = true;
-    
-            for(int i = 0; i<nPessoas; i++){
-                System.out.println("Digite o nome do" + (i+1) + "º cliente");
-                cliente.setNome(esc.next());
-                cliente.setEmail(esc.next());
-                this.cliente.add(cliente);
-            }
-        return(true);
-
-        }
-        else if (res == 0)
-        {
-            this.reserva = false;
-            return(false);
-        }
-        else 
-        {
-            this.reserva = false;
-            System.out.println("\n*** INVALIDO ***\n");
-            return(false);
+            return true;
         }
     }
-    
 }
 
