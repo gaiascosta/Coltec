@@ -3,24 +3,30 @@ import java.util.ArrayList;
 
 public class Comanda {
 
-    private double valor;
+    public double valor;
 
     // Lista de consumo
-    ArrayList<String> consumo = new ArrayList<>();
+    ArrayList<String> consumo = new ArrayList<String>();
 
     // Funções
-    void listarConsumo(String consumo)
+    void listarConsumo()
     {
+        int i = 0;
         System.out.println(" --- Lista de Consumo --- ");
-        System.out.println(consumo);
+        while (i < this.consumo.size())
+        {
+            System.out.println(i+1 + "° - " + this.consumo.get(i));
+        }
     }
 
-    double calcular10Porcento(double valor){
-        return(valor*0.10);
+    double calcular10Porcento()
+    {
+        return(this.valor*0.10);
     }
 
-    double dividirConta(double valor, int nPessoas){
-        return(valor/nPessoas);
+    double dividirConta(int nPessoas)
+    {
+        return(this.valor/nPessoas);
     }
 
     //Getters & Setters
