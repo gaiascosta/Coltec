@@ -1,6 +1,6 @@
 package EL_MAIA;
-import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.ArrayList;
 
 public class Mesa 
 {
@@ -35,41 +35,23 @@ public class Mesa
     // Funções
     public boolean reservar(int res)
     {
-
         Scanner esc = new Scanner(System.in);
+        System.out.println("Digite o numero de pessoas: ");
         int nPessoas = esc.nextInt();
         Cliente cliente = new Cliente();
 
         if (res == 1)
         {
             this.reserva = true;
-            
-            if(nPessoas>6){
-                System.out.println(" ---- Máximo de 6 pessoas por mesa :( ----");
-                System.out.println("Gostaria de continuar mesmo assim?\n S/N: ");
-                char c = esc.next().charAt(0);
-                if(c == 'S' || c == 's'){
-                    for(int i = 0; i<6; i++){
-                        System.out.println("Digite o nome do" + (i+1) + "º cliente");
-                        cliente.setNome(esc.next());
-                        cliente.setEmail(esc.next());
-                        this.cliente.add(cliente);
-                    }
-
-                } else{
-                    return(false);
-                }
-
-            } else{
-                for(int i = 0; i<nPessoas; i++){
-                    System.out.println("Digite o nome do" + (i+1) + "º cliente");
-                    cliente.setNome(esc.next());
-                    cliente.setEmail(esc.next());
-                    this.cliente.add(cliente);
-                }
+    
+            for(int i = 0; i<nPessoas; i++){
+                System.out.println("Digite o nome do" + (i+1) + "º cliente");
+                cliente.setNome(esc.next());
+                cliente.setEmail(esc.next());
+                this.cliente.add(cliente);
             }
+        return(true);
 
-            return(true);
         }
         else if (res == 0)
         {
@@ -85,3 +67,4 @@ public class Mesa
     }
     
 }
+
