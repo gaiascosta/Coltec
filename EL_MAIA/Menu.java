@@ -237,7 +237,6 @@ public class Menu
         System.out.printf("\nPor favor, digite o número da sua mesa: ");
         String mesa_numero = esc.next();
         int mesinha =  Integer.parseInt(mesa_numero);
-        this.restaurante.mesa_existe(mesinha);
         if (this.restaurante.mesa_existe(mesinha))
         {
             restaurante.mesa.get(mesinha).getComanda().listarConsumo();
