@@ -10,11 +10,39 @@ public class Menu
     Restaurante restaurante = new Restaurante();
 
     // Funções
+    void imprime_menu()
+    {
+        System.out.println("\nDigite [0] para SAIR");
+        System.out.println("Digite [1] para RESERVAR UMA MESA");
+        System.out.println("Digite [2] para FAZER UM PEDIDO");
+        System.out.println("Digite [3] para CADASTRAR UM CLIENTE");
+        System.out.println("Digite [4] para DIVIDIR A CONTA");
+        System.out.println("Digite [5] para CALCULAR 10% DA CONTA");
+        System.out.println("Digite [6] para LISTA O CONSUMO DA MESA\n");
+    }
+    void opcoes()
+    {
+        this.restaurante.inicializar_mesas();
+        imprime_menu();
+        String escolha = esc.next();
+        int escolinha = Integer.parseInt(escolha);
+        while(escolinha != 0)
+        {
+            switch(escolinha)
+            {
+                case 1:
+                break;
+            }
+            imprime_menu();
+            escolha = esc.next();
+            escolinha = Integer.parseInt(escolha);
+        }
+    }
+
     public void menu_reservar (int res)
     {
         Mesa mesa = new Mesa();
         mesa.reservar(res);
-        this.restaurante.inicializar_mesas();
     }
     public void menu_Cardapio(int res)
     {
@@ -197,24 +225,24 @@ public class Menu
             }
         }
     }
+    void menu_cadastra_cliente()
+    {
+        System.out.printf("\nPor favor, digite o número em que o cliente deve ser cadastrado: ");
+        String mesa_numero = esc.next();
+        int mesinha =  Integer.parseInt(mesa_numero);
+
+    }
     void menu_listar()
     {
         System.out.printf("\nPor favor, digite o número da sua mesa: ");
         String mesa_numero = esc.next();
         int mesinha =  Integer.parseInt(mesa_numero);
-        while(!this.restaurante.mesa_existe(mesinha))
+        this.restaurante.mesa_existe(mesinha);
+        if (this.restaurante.mesa_existe(mesinha))
         {
-            if (this.restaurante.mesa_existe(mesinha))
-            {
-                restaurante.mesa.get(mesinha).getComanda().listarConsumo();
-            }
-            else
-            {
-                System.out.printf("\nPor favor, digite o número da sua mesa: ");
-                mesa_numero = esc.next();
-                mesinha =  Integer.parseInt(mesa_numero);
-            }
+            restaurante.mesa.get(mesinha).getComanda().listarConsumo();
         }
     }
 
 }
+
