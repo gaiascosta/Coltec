@@ -18,7 +18,7 @@ public class Menu
         System.out.println("Digite [3] para CADASTRAR UM CLIENTE");
         System.out.println("Digite [4] para DIVIDIR A CONTA");
         System.out.println("Digite [5] para CALCULAR 10% DA CONTA");
-        System.out.println("Digite [6] para LISTA O CONSUMO DA MESA\n");
+        System.out.println("Digite [6] para LISTAR O CONSUMO DA MESA\n");
     }
     void opcoes()
     {
@@ -101,11 +101,11 @@ public class Menu
             int mesinha =  Integer.parseInt(mesa);
             fazer_pedido(mesinha);
     }
-    public void fazer_pedido(int n_mesa)
+    public void fazer_pedido(int i)
     {
-        String pedido = esc.next(); int i = 0;
+        String pedido = esc.next();
         int pedidinho = Integer.parseInt(pedido);
-        if (!(this.restaurante.mesa_existe(n_mesa)))
+        if (!(this.restaurante.mesa_existe(i)))
         {
             return;
         }
@@ -214,7 +214,7 @@ public class Menu
             pedidinho = Integer.parseInt(pedido);
             
         }
-        System.out.println("Obrigada por comprar no Buchinho Cheio");
+        System.out.println("\nObrigada por comprar no Buchinho Cheio!");
     }
     void menu_dividir()
     {
@@ -247,7 +247,7 @@ public class Menu
     }
     void menu_cadastra_cliente()
     {
-        System.out.printf("\nPor favor, digite o número em que o cliente deve ser cadastrado: ");
+        System.out.printf("\nPor favor, digite a mesa em que o cliente deve ser cadastrado: ");
         String mesa_numero = esc.next();
         int mesinha =  Integer.parseInt(mesa_numero);
         if (this.restaurante.mesa_existe(mesinha))
@@ -266,9 +266,11 @@ public class Menu
         System.out.printf("\nPor favor, digite o número da sua mesa: ");
         String mesa_numero = esc.next();
         int mesinha =  Integer.parseInt(mesa_numero);
+        System.out.println("\nmesa: " + mesinha);
         if (this.restaurante.mesa_existe(mesinha))
         {
             restaurante.mesa.get(mesinha).getComanda().listarConsumo();
+            System.out.println("O valor a ser pago por essa mesa é R$" + restaurante.mesa.get(mesinha).getComanda().getValor());
         }
     }
 
