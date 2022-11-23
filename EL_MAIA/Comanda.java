@@ -16,6 +16,7 @@ public class Comanda {
         while (i < this.consumo.size())
         {
             System.out.println(i+1 + "° - " + this.consumo.get(i));
+            i++;
         }
     }
 
