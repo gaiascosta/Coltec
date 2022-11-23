@@ -8,7 +8,7 @@ public class Restaurante
 
     // Variáveis
     private String nome = "Buchinho Cheio";
-    private String endereco = "Rua Borboletas Psicodélicas";
+    private String endereco = "Rua das Borboletas Psicodélicas";
     private int numero_mesas = 10;
 
     //Inicializando as Mesas
