@@ -12,7 +12,8 @@ public class Menu
     {
         Mesa mesa = new Mesa();
         System.out.printf("Deseja fazer uma reserva? \n[0] Não\t[1] Sim\t: ");
-        int res = esc.nextInt();
+        String pedido = esc.next();
+        int res = Integer.parseInt(pedido);
         mesa.reservar(res);
         this.restaurante.inicializar_mesas();
     }
