@@ -230,6 +230,15 @@ public class Menu
         System.out.printf("\nPor favor, digite o número em que o cliente deve ser cadastrado: ");
         String mesa_numero = esc.next();
         int mesinha =  Integer.parseInt(mesa_numero);
+        if (this.restaurante.mesa_existe(mesinha))
+        {
+            Cliente cl = new Cliente();
+            System.out.printf("\nPor favor, digite o nome do cliente: ");
+            cl.setNome(esc.next());
+            System.out.printf("\nPor favor, digite o email do cliente: ");
+            cl.setEmail(esc.next());
+            this.restaurante.mesa.get(mesinha).cliente.add(cl);
+        }
 
     }
     void menu_listar()
