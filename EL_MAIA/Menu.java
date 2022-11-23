@@ -1,6 +1,8 @@
 package EL_MAIA;
 import java.util.Scanner;
 
+import javax.lang.model.util.ElementScanner6;
+
 public class Menu 
 {
     // Variáveis
@@ -8,19 +10,14 @@ public class Menu
     Restaurante restaurante = new Restaurante();
 
     // Funções
-    public void menu_reservar ()
+    public void menu_reservar (int res)
     {
         Mesa mesa = new Mesa();
-        System.out.printf("Deseja fazer uma reserva? \n[0] Não\t[1] Sim\t: ");
-        String pedido = esc.next();
-        int res = Integer.parseInt(pedido);
         mesa.reservar(res);
         this.restaurante.inicializar_mesas();
     }
-    public void menu_Cardapio()
+    public void menu_Cardapio(int res)
     {
-        System.out.printf("Deseja fazer uma pedido? \n[0] Não\t[1] Sim\t: ");
-        int res = esc.nextInt();
         
         if (res == 1)
         {
@@ -41,24 +38,18 @@ public class Menu
             System.out.printf("\n[16] Pudim de Leite Condenado.........................R$ 4,00\n[17] Pácomê...........................................R$ 13,00");
             System.out.printf("\n[18] Sonho de Falsa...................................R$ 2,50\n[*] Especialidade do Chef.............................R$ 34,69\n[0] Fim do Pedido\n");
 
-            fazer_pedido(0);
+            System.out.printf("\n\nPor favor, digite o número da sua mesa: ");
+            String mesa = esc.next();
+            int mesinha =  Integer.parseInt(mesa);
+            fazer_pedido(mesinha);
         }
     }
     public void fazer_pedido(int n_mesa)
     {
         String pedido = esc.next(); int i = 0;
         int pedidinho = Integer.parseInt(pedido);
-        while(i < this.restaurante.mesa.size())
+        if (!(this.restaurante.mesa_existe(n_mesa)))
         {
-            if (this.restaurante.mesa.get(i).getNumero_mesa() == n_mesa)
-            {
-                break;
-            }
-            i++;
-        }
-        if (i == this.restaurante.mesa.size() == true)
-        {
-            System.out.println("Mesa Inexistente");
             return;
         }
         
@@ -167,5 +158,27 @@ public class Menu
             
         }
         System.out.println("Obrigada por comprar no Buchinho Cheio");
+    }
+    void menu_dividir(Mesa mesa, int div)
+    {
+        if (div == 1)
+        {
+            System.out.printf("\nPor favor, digite o número da sua mesa: ");
+            String mesa_numero = esc.next();
+            int mesinha =  Integer.parseInt(mesa_numero);
+            while(!this.restaurante.mesa_existe(mesinha))
+            {
+                if (this.restaurante.mesa_existe(mesinha))
+                {
+                    fazer_pedido(mesinha);
+                }
+                else
+                {
+                    System.out.printf("\nPor favor, digite o número da sua mesa: ");
+                    mesa_numero = esc.next();
+                    mesinha =  Integer.parseInt(mesa_numero);
+                }
+            }
+        }  
     }
 }
