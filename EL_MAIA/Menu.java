@@ -31,6 +31,27 @@ public class Menu
             switch(escolinha)
             {
                 case 1:
+                this.menu_reservar();
+                break;
+
+                case 2:
+                this.menu_Cardapio();
+                break;
+
+                case 3:
+                this.menu_cadastra_cliente();
+                break;
+
+                case 4:
+                this.menu_dividir();
+                break;
+
+                case 5:
+                this.menu_10per();
+                break;
+
+                case 6:
+                this.menu_listar();
                 break;
             }
             imprime_menu();
@@ -39,17 +60,26 @@ public class Menu
         }
     }
 
-    public void menu_reservar (int res)
+    public void menu_reservar ()
     {
-        Mesa mesa = new Mesa();
-        mesa.reservar(res);
-    }
-    public void menu_Cardapio(int res)
-    {
-        
-        if (res == 1)
+        System.out.printf("\nPor favor, digite o número da sua mesa: ");
+        String mesa_numero = esc.next();
+        int mesinha =  Integer.parseInt(mesa_numero);
+        if (this.restaurante.mesa_existe(mesinha))
         {
-            System.out.printf("\n- - - - CARDÁPIO - - - -\n");
+            if (this.restaurante.mesa.get(mesinha).reservar() == true)
+            {
+                System.out.println("\nMesa reservada com sucesso!");
+            }
+            else
+            {
+                System.out.println("\nMesa desejada já está reservada;");
+            }
+        }
+    }
+    public void menu_Cardapio()
+    {
+        System.out.printf("\n- - - - CARDÁPIO - - - -\n");
             System.out.printf("\nBebidas");
             System.out.printf("\n[1] Água Atômica 500ml................................R$ 2,00\n[2] Limonada Suína....................................R$ 4,50");
             System.out.printf("\n[3] Coca..............................................R$ 5,50\n[4] Leite com Polvo Maltino...........................R$ 4,90");
@@ -70,7 +100,6 @@ public class Menu
             String mesa = esc.next();
             int mesinha =  Integer.parseInt(mesa);
             fazer_pedido(mesinha);
-        }
     }
     public void fazer_pedido(int n_mesa)
     {
@@ -187,7 +216,7 @@ public class Menu
         }
         System.out.println("Obrigada por comprar no Buchinho Cheio");
     }
-    void menu_dividir(Mesa mesa)
+    void menu_dividir()
     {
         System.out.printf("\nPor favor, digite o número da sua mesa: ");
         String mesa_numero = esc.next();
@@ -211,18 +240,9 @@ public class Menu
         System.out.printf("\nPor favor, digite o número da sua mesa: ");
         String mesa_numero = esc.next();
         int mesinha =  Integer.parseInt(mesa_numero);
-        while(!this.restaurante.mesa_existe(mesinha))
+        if (this.restaurante.mesa_existe(mesinha))
         {
-            if (this.restaurante.mesa_existe(mesinha))
-            {
-                System.out.println("Cada cliente da mesa deverá pagar " + restaurante.mesa.get(mesinha).getComanda().calcular10Porcento());
-            }
-            else
-            {
-                System.out.printf("\nPor favor, digite o número da sua mesa: ");
-                mesa_numero = esc.next();
-                mesinha =  Integer.parseInt(mesa_numero);
-            }
+            System.out.println("Cada cliente da mesa deverá pagar " + restaurante.mesa.get(mesinha).getComanda().calcular10Porcento());
         }
     }
     void menu_cadastra_cliente()
