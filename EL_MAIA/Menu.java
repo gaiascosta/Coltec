@@ -159,26 +159,62 @@ public class Menu
         }
         System.out.println("Obrigada por comprar no Buchinho Cheio");
     }
-    void menu_dividir(Mesa mesa, int div)
+    void menu_dividir(Mesa mesa)
     {
-        if (div == 1)
+        System.out.printf("\nPor favor, digite o número da sua mesa: ");
+        String mesa_numero = esc.next();
+        int mesinha =  Integer.parseInt(mesa_numero);
+        while(!this.restaurante.mesa_existe(mesinha))
         {
-            System.out.printf("\nPor favor, digite o número da sua mesa: ");
-            String mesa_numero = esc.next();
-            int mesinha =  Integer.parseInt(mesa_numero);
-            while(!this.restaurante.mesa_existe(mesinha))
+            if (this.restaurante.mesa_existe(mesinha))
             {
-                if (this.restaurante.mesa_existe(mesinha))
-                {
-                    fazer_pedido(mesinha);
-                }
-                else
-                {
-                    System.out.printf("\nPor favor, digite o número da sua mesa: ");
-                    mesa_numero = esc.next();
-                    mesinha =  Integer.parseInt(mesa_numero);
-                }
+                fazer_pedido(mesinha);
             }
-        }  
+            else
+            {
+                System.out.printf("\nPor favor, digite o número da sua mesa: ");
+                mesa_numero = esc.next();
+                mesinha =  Integer.parseInt(mesa_numero);
+            }
+        }
     }
+    void menu_10per()
+    {
+        System.out.printf("\nPor favor, digite o número da sua mesa: ");
+        String mesa_numero = esc.next();
+        int mesinha =  Integer.parseInt(mesa_numero);
+        while(!this.restaurante.mesa_existe(mesinha))
+        {
+            if (this.restaurante.mesa_existe(mesinha))
+            {
+                System.out.println("Cada cliente da mesa deverá pagar " + restaurante.mesa.get(mesinha).getComanda().calcular10Porcento());
+            }
+            else
+            {
+                System.out.printf("\nPor favor, digite o número da sua mesa: ");
+                mesa_numero = esc.next();
+                mesinha =  Integer.parseInt(mesa_numero);
+            }
+        }
+    }
+    void menu_listar()
+    {
+        System.out.printf("\nPor favor, digite o número da sua mesa: ");
+        String mesa_numero = esc.next();
+        int mesinha =  Integer.parseInt(mesa_numero);
+        while(!this.restaurante.mesa_existe(mesinha))
+        {
+            if (this.restaurante.mesa_existe(mesinha))
+            {
+                restaurante.mesa.get(mesinha).getComanda().listarConsumo();
+            }
+            else
+            {
+                System.out.printf("\nPor favor, digite o número da sua mesa: ");
+                mesa_numero = esc.next();
+                mesinha =  Integer.parseInt(mesa_numero);
+            }
+        }
+    }
+
 }
