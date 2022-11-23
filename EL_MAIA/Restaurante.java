@@ -9,7 +9,7 @@ public class Restaurante
     // Variáveis
     private String nome = "Buchinho Cheio";
     private String endereco = "Rua das Borboletas Psicodélicas";
-    private int numero_mesas = 10;
+    private int numero_mesas = 20;
 
     //Inicializando as Mesas
     public void inicializar_mesas()
@@ -48,7 +48,7 @@ public class Restaurante
             }
             i++;
         }
-        if (i == this.mesa.size() == true)
+        if (i == this.mesa.size())
         {
             System.out.println("Mesa Inexistente");
             return false;
