@@ -270,7 +270,7 @@ public class Menu
         if (this.restaurante.mesa_existe(mesinha))
         {
             restaurante.mesa.get(mesinha).getComanda().listarConsumo();
-            System.out.println("O valor a ser pago por essa mesa é R$" + restaurante.mesa.get(mesinha).getComanda().getValor());
+            System.out.println("O valor a ser pago é R$" + restaurante.mesa.get(mesinha).getComanda().getValor() = "0");
         }
     }
 
