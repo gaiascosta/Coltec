@@ -49,6 +49,12 @@ public class Mesa
         else
         {
             this.reserva = true;
+            Cliente cl = new Cliente();
+            System.out.printf("\nPor favor, digite o nome do cliente: ");
+            cl.setNome(esc.next());
+            System.out.printf("\nPor favor, digite o email do cliente: ");
+            cl.setEmail(esc.next());
+            this.cliente.add(cl);
             return true;
         }
     }
