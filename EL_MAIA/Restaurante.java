@@ -42,7 +42,7 @@ public class Restaurante
         int i = 0;
         while(i < this.mesa.size())
         {
-            if (this.mesa.get(i).getNumero_mesa() == n_mesa)
+            if ((this.mesa.get(i).getNumero_mesa() == n_mesa)&&(this.mesa.get(i).reserva == true))
             {
                 break;
             }
@@ -50,7 +50,7 @@ public class Restaurante
         }
         if (i == this.mesa.size())
         {
-            System.out.println("Mesa Inexistente");
+            System.out.println("Mesa Inexistente ou sem reserva");
             return false;
         }
         else 
