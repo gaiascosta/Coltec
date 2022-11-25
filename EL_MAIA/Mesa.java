@@ -1,4 +1,3 @@
-package EL_MAIA;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -7,21 +6,12 @@ public class Mesa
     // Lista de Clientes
     ArrayList<Cliente> cliente = new ArrayList<Cliente>();
     //Lista de Datas para a reserva de uma mesa
-    ArrayList<String> data = new ArrayList<String>();
+    ArrayList<Data> data = new ArrayList<Data>();
 
     // Variáveis
     private int numero_mesa;
-    private Comanda comanda = new Comanda();
-    private boolean reserva = false;
-
     // Getters and Setters
 
-    public Comanda getComanda() {
-        return comanda;
-    }
-    public void setComanda(Comanda comanda) {
-        this.comanda = comanda;
-    }
     public int getNumero_mesa() {
         return numero_mesa;
     }
@@ -34,18 +24,12 @@ public class Mesa
     public boolean isReserva(String dataReserva) {
 
         for(int i = 0; i<data.size(); i++){
-            if(this.data.get(i) == dataReserva){
+            if(this.data.get(i).getDataReserva() == dataReserva){
                 return true;
             }
         }
         return false;
     }
-
-
-    public void setReserva(boolean reserva) {
-        this.reserva = reserva;
-    }
-
     // Funções
     public boolean reservar()
     {
@@ -58,24 +42,26 @@ public class Mesa
         System.out.printf("\nPor favor, digite a data para reserva da mesa " + this.numero_mesa + ": " );
 
         String dataReserva = esc.next();
+        int j;
 
         //Verifica se a mesa ja foi reservada para aquela data
         for(int i = 0; i<data.size(); i++){
-            if(this.data.get(i) == dataReserva){
+            if(this.data.get(i).getDataReserva() == dataReserva){
                 esc.close();
                 return false;
             }
+            j = i;
         }
 
         //Se a mesa não foi reservada:
-        this.data.add(dataReserva);
+        this.data.get(j).setDataReserva(dataReserva);
 
         System.out.printf("\nPor favor, digite o numero de clientes: ");
         nClientes = esc.nextInt();
 
         for(int i = 0; i<nClientes; i++){
 
-            this.reserva = true;
+            this.data.get(j).setReserva(true);
             Cliente cl = new Cliente();
             System.out.printf("\nPor favor, digite o nome do cliente: ");
             cl.setNome(esc.next());
