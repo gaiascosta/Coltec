@@ -13,10 +13,16 @@ public class Restaurante
     //Inicializando as Mesas
     public void inicializar_mesas()
     {
+        // Inicializando a data 0
+        Data darita = new Data();
+        darita.setDia(0);
+        darita.setMes(0);
+
         for(int i = 0; i<this.numero_mesas; i++)
         {
             Mesa mesita = new Mesa();
             mesita.setNumero_mesa(i);
+            mesita.data.add(darita);
             this.mesa.add(mesita);
         }
     }
@@ -36,12 +42,11 @@ public class Restaurante
     }
 
     // Funções
-    boolean mesa_existe(int n_mesa, int dia, int mes)
+    public boolean mesa_existe(int n_mesa, int dia, int mes)
     {
-
         for(int i = 0; i<mesa.size(); i++)
         {
-            if ((this.mesa.get(i).getNumero_mesa() == n_mesa)&&(mesa.get(i).data_existe(dia, mes) == false))
+            if ((this.mesa.get(i).getNumero_mesa() == n_mesa)&&(mesa.get(i).data_existe(dia, mes) == true))
             {
                 return true;
             }
