@@ -37,25 +37,17 @@ public class Restaurante
     }
 
     // Funções
-    boolean mesa_existe(int n_mesa)
+    boolean mesa_existe(int n_mesa, String dataHoje)
     {
-        int i = 0;
-        while(i < this.mesa.size())
-        {
-            if ((this.mesa.get(i).getNumero_mesa() == n_mesa)&&(this.mesa.get(i).reserva == true))
-            {
-                break;
-            }
-            i++;
-        }
-        if (i == this.mesa.size())
-        {
-            System.out.println("Mesa Inexistente ou sem reserva");
-            return false;
-        }
-        else 
-        {
+
+        for(int i = 0; i<mesa.size(); i++){
+            if ((this.mesa.get(i).getNumero_mesa() == n_mesa)&&(this.mesa.get(i).isReserva(dataHoje) == true))
             return true;
         }
+
+        System.out.println("Mesa Inexistente ou sem reserva");
+        return false;
+
     }
 }
+
