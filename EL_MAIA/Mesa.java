@@ -29,8 +29,6 @@ public class Mesa
                 return true;
             }
         }
-
-        System.out.println("Mesa inexistente ou não reservada; (Nosso restaurante é muito chique, só trabalhamos com reservas)");
         return false;
     }
     public boolean reservar(int dia, int mes)
@@ -40,9 +38,7 @@ public class Mesa
 
         //Inicializa o Scanner
         Scanner esc = new Scanner(System.in);
-
-        System.out.printf("\nPor favor, digite a data para reserva da mesa " + this.numero_mesa + ": " );
-
+        
         //Verifica se a mesa ja foi reservada para aquela data
         if (data_existe(dia, mes) == true)
         {
