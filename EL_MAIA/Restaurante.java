@@ -18,6 +18,7 @@ public class Restaurante
             Mesa mesa = new Mesa();
             mesa.setNumero_mesa(i);
             this.mesa.add(mesa);
+            this.mesa.get(i).inicializa_data();
         }
     }
     
