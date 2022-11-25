@@ -1,4 +1,3 @@
-package EL_MAIA;
 import java.util.ArrayList;
 
 public class Comanda {
