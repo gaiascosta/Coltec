@@ -1,4 +1,3 @@
-package EL_MAIA;
 import java.util.ArrayList;
 
 public class Restaurante 
@@ -37,11 +36,12 @@ public class Restaurante
     }
 
     // Funções
-    boolean mesa_existe(int n_mesa, String dataHoje)
+    boolean mesa_existe(int n_mesa, int datinhazinha)
     {
 
-        for(int i = 0; i<mesa.size(); i++){
-            if ((this.mesa.get(i).getNumero_mesa() == n_mesa)&&(this.mesa.get(i).isReserva(dataHoje) == true))
+        for(int i = 0; i<mesa.size(); i++)
+        {
+            if ((this.mesa.get(i).getNumero_mesa() == n_mesa)&&(this.mesa.get(i).data.get(datinhazinha).isDatinha() == true))
             return true;
         }
 
