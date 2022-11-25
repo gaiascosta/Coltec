@@ -65,9 +65,9 @@ public class Mesa
 
             darita.setReserva(true);
             Cliente cl = new Cliente();
-            System.out.printf("\nPor favor, digite o nome do cliente: ");
+            System.out.printf("Por favor, digite o nome do " + (i+1) + "º cliente: ");
             cl.setNome(esc.next());
-            System.out.printf("\nPor favor, digite o email do cliente: ");
+            System.out.printf("Por favor, digite o email do " + (i+1) + "º cliente: ");
             cl.setEmail(esc.next());
             this.cliente.add(cl);
                 
