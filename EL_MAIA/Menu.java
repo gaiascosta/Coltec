@@ -22,16 +22,16 @@ public class Menu
     {
         this.restaurante.inicializar_mesas();
         System.out.println("Por favor, digite o dia de hoje: ");
-        this.dia = esc.nextInt() - 1;
+        this.dia = esc.nextInt();
         System.out.println("Por favor, digite o mes de hoje: ");
-        this.mes = esc.nextInt() - 1;
-        while((dia > 30) || (mes > 12))
+        this.mes = esc.nextInt();
+        while((dia > 30) || (mes > 12) || (dia <= 0) || (mes <= 0))
         {
             System.out.println("\n**Data invalida, tente novamente**\n");
             System.out.println("Por favor, digite o dia de hoje: ");
-            this.dia = esc.nextInt() - 1;
+            this.dia = esc.nextInt();
             System.out.println("Por favor, digite o mes de hoje: ");
-            this.mes = esc.nextInt() - 1;
+            this.mes = esc.nextInt();
         }
         imprime_menu();
         String escolha = esc.next();
@@ -75,20 +75,17 @@ public class Menu
         System.out.printf("\nPor favor, digite o número da sua mesa: ");
         String mesa_numero = esc.next();
         int mesinha =  Integer.parseInt(mesa_numero);
-        if (this.restaurante.mesa_existe(mesinha, dia, mes))
+        System.out.println("\nPor favor, digite o dia desejado para a reserva: ");
+        int ditito = esc.nextInt();
+        System.out.println("\nPor favor, digite o mes desejado para a reserva: ");
+        int mesito = esc.nextInt();
+        if (this.restaurante.mesa.get(mesinha).reservar(ditito, mesito) == true)
         {
-            System.out.println("\nPor favor, digite o dia desejado para a reserva: ");
-            int ditito = esc.nextInt();
-            System.out.println("\nPor favor, digite o mes desejado para a reserva: ");
-            int mesito = esc.nextInt();
-            if (this.restaurante.mesa.get(mesinha).reservar(ditito, mesito) == true)
-            {
-                System.out.println("\nMesa reservada com sucesso!");
-            }
-            else
-            {
-                System.out.println("\nMesa desejada já está reservada;");
-            }
+            System.out.println("\nMesa reservada com sucesso!");
+        }
+        else
+        {
+            System.out.println("\nMesa desejada já está reservada;");
         }
     }
     public void menu_Cardapio()
@@ -111,29 +108,22 @@ public class Menu
             System.out.printf("\n[18] Sonho de Falsa...................................R$ 2,50\n[*] Especialidade do Chef.............................R$ 34,69\n[0] Fim do Pedido\n");
 
             System.out.printf("\n\nPor favor, digite o número da sua mesa: ");
-            String mesa = esc.next();
-            int mesinha =  Integer.parseInt(mesa);
-            System.out.printf("\n\nPor favor, digite o dia da sua reserva: ");
-            String ditito = esc.next();
-            int dititinho =  Integer.parseInt(ditito);
-            System.out.printf("\n\nPor favor, digite o mês da sua reserva: ");
-            String mesitito = esc.next();
-            int mesititinho =  Integer.parseInt(mesitito);
-            fazer_pedido(mesinha, dititinho, mesititinho);
+            int mesinha =  esc.nextInt();
+            if (this.restaurante.mesa_existe(mesinha, dia, mes) == true)
+            {
+                fazer_pedido(mesinha, dia, mes);
+            }
     }
     public void fazer_pedido(int i, int dia, int mes)
     {
-        String pedido = esc.next();
-        int pedidinho = Integer.parseInt(pedido);
-        if (!(this.restaurante.mesa_existe(i, dia, mes)))
-        {
-            return;
-        }
         int j = 0;
         while((this.restaurante.mesa.get(i).data.get(j).getDia() != dia) || (this.restaurante.mesa.get(i).data.get(j).getMes() != mes))
         {
             j++;
         }
+        System.out.printf("\n\nPor favor, digite o código dos itens desejados: ");
+        String pedido = esc.next();
+        int pedidinho = Integer.parseInt(pedido);
 
         while (pedidinho != 0)
         {
@@ -240,26 +230,22 @@ public class Menu
         }
         System.out.println("\nObrigada por comprar no Buchinho Cheio!");
     }
-    void menu_dividir()
+    public void menu_dividir()
     {
         System.out.printf("\nPor favor, digite o número da sua mesa: ");
         String mesa_numero = esc.next();
         int mesinha =  Integer.parseInt(mesa_numero);
-        while(!this.restaurante.mesa_existe(mesinha, dia, mes))
+        int j = 0;
+        if (this.restaurante.mesa_existe(mesinha, dia, mes))
         {
-            if (this.restaurante.mesa_existe(mesinha, dia, mes))
+            while((this.restaurante.mesa.get(mesinha).data.get(j).getDia() != dia) || (this.restaurante.mesa.get(mesinha).data.get(j).getMes() != mes))
             {
-                fazer_pedido(mesinha, dia, mes);
+                j++;
             }
-            else
-            {
-                System.out.printf("\nPor favor, digite o número da sua mesa: ");
-                mesa_numero = esc.next();
-                mesinha =  Integer.parseInt(mesa_numero);
-            }
+            System.out.println("Cada cliente da mesa deverá pagar R$" + this.restaurante.mesa.get(mesinha).data.get(j).comanda.dividirConta(this.restaurante.mesa.get(mesinha).cliente.size()) + "0");
         }
     }
-    void menu_10per()
+    public void menu_10per()
     {
         System.out.printf("\nPor favor, digite o número da sua mesa: ");
         String mesa_numero = esc.next();
@@ -271,7 +257,7 @@ public class Menu
             {
                 j++;
             }
-            System.out.println("Cada cliente da mesa deverá pagar " + restaurante.mesa.get(mesinha).data.get(j).comanda.calcular10Porcento());
+            System.out.println("A gorjeta estimada é de R$" + restaurante.mesa.get(mesinha).data.get(j).comanda.calcular10Porcento() + "0");
         }
     }
     void menu_cadastra_cliente()
@@ -295,9 +281,9 @@ public class Menu
         System.out.printf("\nPor favor, digite o número da sua mesa: ");
         String mesa_numero = esc.next();
         int mesinha =  Integer.parseInt(mesa_numero);
-        System.out.println("\nmesa: " + mesinha);
         if (this.restaurante.mesa_existe(mesinha, dia, mes))
         {
+            System.out.println("teste" + mesinha);
             int j = 0;
             while((this.restaurante.mesa.get(mesinha).data.get(j).getDia() != dia) || (this.restaurante.mesa.get(mesinha).data.get(j).getMes() != mes))
             {
@@ -309,3 +295,4 @@ public class Menu
     }
 
 }
+
