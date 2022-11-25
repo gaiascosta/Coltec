@@ -1,25 +1,28 @@
 public class Data 
 {
-    private boolean datinha;
-    public boolean isDatinha() {
-        return datinha;
-    }
-    public void setDatinha(boolean datinha) {
-        this.datinha = datinha;
-    }
+    //Variáveis
     private boolean reserva;
+    private int dia;
+    private int mes;
+    Comanda comanda = new Comanda();
+
+    //Getters and Setters
+    public int getMes() {
+        return mes;
+    }
+    public void setMes(int mes) {
+        this.mes = mes;
+    }
+    public int getDia() {
+        return dia;
+    }
+    public void setDia(int dia) {
+        this.dia = dia;
+    }
     public boolean isReserva() {
         return reserva;
     }
     public void setReserva(boolean reserva) {
         this.reserva = reserva;
     }
-    private String dataReserva;
-    public String getDataReserva() {
-        return dataReserva;
-    }
-    public void setDataReserva(String dataReserva) {
-        this.dataReserva = dataReserva;
-    }
-    Comanda comanda = new Comanda();
 }
