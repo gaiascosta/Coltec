@@ -1,7 +1,8 @@
 import java.util.ArrayList;
 
-public class Comanda {
-
+public class Comanda 
+{
+    // Variáveis
     public double valor;
 
     // Lista de consumo
