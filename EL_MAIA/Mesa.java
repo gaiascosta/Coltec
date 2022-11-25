@@ -19,27 +19,21 @@ public class Mesa
         this.numero_mesa = numero_mesa;
     }
 
-
-    //Verifica se a mesa foi reservada para uma determinada data
-    public void inicializa_data ()
+    // Funções
+    public boolean data_existe(int dia, int mes)
     {
-        for(int a = 0; a < 360; a++)
+        for(int i = 0; i < this.data.size(); i++)
         {
-            this.data.get(a).setDatinha(true);
-        }
-    }
-
-    public boolean isReserva(String dataReserva) {
-
-        for(int i = 0; i<data.size(); i++){
-            if(this.data.get(i).getDataReserva() == dataReserva){
+            if ((dia == this.data.get(i).getDia()) && (mes == this.data.get(i).getMes()))
+            {
                 return true;
             }
         }
+
+        System.out.println("Mesa inexistente ou não reservada; (Nosso restaurante é muito chique, só trabalhamos com reservas)");
         return false;
     }
-    // Funções
-    public boolean reservar()
+    public boolean reservar(int dia, int mes)
     {
 
         int nClientes;
@@ -49,27 +43,24 @@ public class Mesa
 
         System.out.printf("\nPor favor, digite a data para reserva da mesa " + this.numero_mesa + ": " );
 
-        String dataReserva = esc.next();
-        int j = 0;
-
         //Verifica se a mesa ja foi reservada para aquela data
-        for(int i = 0; i<data.size(); i++){
-            if(this.data.get(i).getDataReserva() == dataReserva){
-                esc.close();
-                return false;
-            }
-            j = i;
+        if (data_existe(dia, mes) == true)
+        {
+            esc.close();
+            return false;
         }
 
         //Se a mesa não foi reservada:
-        this.data.get(j).setDataReserva(dataReserva);
+        Data darita = new Data();
+        darita.setDia(dia);
+        darita.setMes(mes);
 
         System.out.printf("\nPor favor, digite o numero de clientes: ");
         nClientes = esc.nextInt();
 
         for(int i = 0; i<nClientes; i++){
 
-            this.data.get(j).setReserva(true);
+            darita.setReserva(true);
             Cliente cl = new Cliente();
             System.out.printf("\nPor favor, digite o nome do cliente: ");
             cl.setNome(esc.next());
@@ -78,6 +69,8 @@ public class Mesa
             this.cliente.add(cl);
                 
         }
+
+        this.data.add(darita);
 
         //Fecha o Scanner :)
         esc.close();
