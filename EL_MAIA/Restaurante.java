@@ -41,10 +41,11 @@ public class Restaurante
 
         for(int i = 0; i<mesa.size(); i++)
         {
-            if ((this.mesa.get(i).getNumero_mesa() == n_mesa)&&(mesa.get(i).data_existe(dia, mes)))
-            return true;
+            if ((this.mesa.get(i).getNumero_mesa() == n_mesa)&&(mesa.get(i).data_existe(dia, mes) == false))
+            {
+                return true;
+            }
         }
-
         System.out.println("Mesa Inexistente ou sem reserva");
         return false;
 
