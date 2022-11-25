@@ -1,14 +1,19 @@
-package EL_MAIA;
 import java.util.Scanner;
-
-import javax.lang.model.util.ElementScanner6;
 
 public class Menu 
 {
     // Variáveis
     Scanner esc = new Scanner(System.in);
     Restaurante restaurante = new Restaurante();
-
+    int dia;
+    int mes;
+    private int datinha;
+    public int getDatinha() {
+        return datinha;
+    }
+    public void setDatinha(int datinha) {
+        this.datinha = datinha;
+    }
     // Funções
     void imprime_menu()
     {
@@ -23,6 +28,20 @@ public class Menu
     void opcoes()
     {
         this.restaurante.inicializar_mesas();
+        System.out.println("Por favor, digite o dia de hoje: ");
+        this.dia = esc.nextInt() - 1;
+        System.out.println("Por favor, digite o mes de hoje: ");
+        this.mes = esc.nextInt() - 1;
+        this.datinha = (this.mes*30) + this.dia;
+        while(datinha >= 360)
+        {
+            System.out.println("\n**Data invalida, tente novamente**\n");
+            System.out.println("Por favor, digite o dia de hoje: ");
+            this.dia = esc.nextInt() - 1;
+            System.out.println("Por favor, digite o mes de hoje: ");
+            this.mes = esc.nextInt() - 1;
+            this.datinha = (this.mes*30) + this.dia;
+        }
         imprime_menu();
         String escolha = esc.next();
         int escolinha = Integer.parseInt(escolha);
@@ -65,7 +84,7 @@ public class Menu
         System.out.printf("\nPor favor, digite o número da sua mesa: ");
         String mesa_numero = esc.next();
         int mesinha =  Integer.parseInt(mesa_numero);
-        if (this.restaurante.mesa_existe(mesinha))
+        if (this.restaurante.mesa_existe(mesinha,datinha))
         {
             if (this.restaurante.mesa.get(mesinha).reservar() == true)
             {
@@ -105,7 +124,7 @@ public class Menu
     {
         String pedido = esc.next();
         int pedidinho = Integer.parseInt(pedido);
-        if (!(this.restaurante.mesa_existe(i)))
+        if (!(this.restaurante.mesa_existe(i, datinha)))
         {
             return;
         }
@@ -116,73 +135,73 @@ public class Menu
             switch(pedidinho)
             {
                 case 1:
-                restaurante.mesa.get(i).getComanda().valor += 2.00;
-                restaurante.mesa.get(i).getComanda().consumo.add("Água Atômica 500ml");
+                restaurante.mesa.get(i).data.get(datinha).comanda.valor += 2.00;
+                restaurante.mesa.get(i).data.get(datinha).comanda.consumo.add("Água Atômica 500ml");
                 break;
 
                 case 2:
-                restaurante.mesa.get(i).getComanda().valor += 4.50;
-                restaurante.mesa.get(i).getComanda().consumo.add("Limonada Suína");
+                restaurante.mesa.get(i).data.get(datinha).comanda.valor += 4.50;
+                restaurante.mesa.get(i).data.get(datinha).comanda.consumo.add("Limonada Suína");
                 break;
 
                 case 3:
-                restaurante.mesa.get(i).getComanda().valor += 5.50;
-                restaurante.mesa.get(i).getComanda().consumo.add("Coca");
+                restaurante.mesa.get(i).data.get(datinha).comanda.valor += 5.50;
+                restaurante.mesa.get(i).data.get(datinha).comanda.consumo.add("Coca");
                 break;
 
                 case 4:
-                restaurante.mesa.get(i).getComanda().valor += 4.90;
-                restaurante.mesa.get(i).getComanda().consumo.add("Leite com Polvo Maltino");
+                restaurante.mesa.get(i).data.get(datinha).comanda.valor += 4.90;
+                restaurante.mesa.get(i).data.get(datinha).comanda.consumo.add("Leite com Polvo Maltino");
                 break;
 
                 case 5:
-                restaurante.mesa.get(i).getComanda().valor += 3.00;
-                restaurante.mesa.get(i).getComanda().consumo.add("Suco de Abaxaqui");
+                restaurante.mesa.get(i).data.get(datinha).comanda.valor += 3.00;
+                restaurante.mesa.get(i).data.get(datinha).comanda.consumo.add("Suco de Abaxaqui");
                 break;
 
                 case 6:
-                restaurante.mesa.get(i).getComanda().valor += 4.50;
-                restaurante.mesa.get(i).getComanda().consumo.add("Suco de Frutas Críticas 300ml");
+                restaurante.mesa.get(i).data.get(datinha).comanda.valor += 4.50;
+                restaurante.mesa.get(i).data.get(datinha).comanda.consumo.add("Suco de Frutas Críticas 300ml");
                 break;
 
                 case 7:
-                restaurante.mesa.get(i).getComanda().valor += 16.00;
-                restaurante.mesa.get(i).getComanda().consumo.add("Leite de Amnésia");
+                restaurante.mesa.get(i).data.get(datinha).comanda.valor += 16.00;
+                restaurante.mesa.get(i).data.get(datinha).comanda.consumo.add("Leite de Amnésia");
                 break;
 
                 case 8:
-                restaurante.mesa.get(i).getComanda().valor += 28.00;
-                restaurante.mesa.get(i).getComanda().consumo.add("Filé Miau");
+                restaurante.mesa.get(i).data.get(datinha).comanda.valor += 28.00;
+                restaurante.mesa.get(i).data.get(datinha).comanda.consumo.add("Filé Miau");
                 break;
 
                 case 9:
-                restaurante.mesa.get(i).getComanda().valor += 11.50;
-                restaurante.mesa.get(i).getComanda().consumo.add("Batata com molho Barbie Kill");
+                restaurante.mesa.get(i).data.get(datinha).comanda.valor += 11.50;
+                restaurante.mesa.get(i).data.get(datinha).comanda.consumo.add("Batata com molho Barbie Kill");
                 break;
 
                 case 10:
-                restaurante.mesa.get(i).getComanda().valor += 27.00;
-                restaurante.mesa.get(i).getComanda().consumo.add("Bife alí namesa");
+                restaurante.mesa.get(i).data.get(datinha).comanda.valor += 27.00;
+                restaurante.mesa.get(i).data.get(datinha).comanda.consumo.add("Bife alí namesa");
                 break;
 
                 case 11:
-                restaurante.mesa.get(i).getComanda().valor += 15.50;
-                restaurante.mesa.get(i).getComanda().consumo.add("Macarrão ao alho e ódio");
+                restaurante.mesa.get(i).data.get(datinha).comanda.valor += 15.50;
+                restaurante.mesa.get(i).data.get(datinha).comanda.consumo.add("Macarrão ao alho e ódio");
                 break;
 
                 case 12:
-                restaurante.mesa.get(i).getComanda().valor += 10.00;
-                restaurante.mesa.get(i).getComanda().consumo.add("Feijão Torpedo");
+                restaurante.mesa.get(i).data.get(datinha).comanda.valor += 10.00;
+                restaurante.mesa.get(i).data.get(datinha).comanda.consumo.add("Feijão Torpedo");
                 break;
 
                 case 13:
-                restaurante.mesa.get(i).getComanda().valor += 10.00;
-                restaurante.mesa.get(i).getComanda().consumo.add("Arroz com carne morrida");
+                restaurante.mesa.get(i).data.get(datinha).comanda.valor += 10.00;
+                restaurante.mesa.get(i).data.get(datinha).comanda.consumo.add("Arroz com carne morrida");
                 break;
 
                 case 14:
-                restaurante.mesa.get(i).getComanda().valor += 8.00;
-                restaurante.mesa.get(i).getComanda().consumo.add("X & Queique");
+                restaurante.mesa.get(i).data.get(datinha).comanda.valor += 8.00;
+                restaurante.mesa.get(i).data.get(datinha).comanda.consumo.add("X & Queique");
                 break;
 
                 case 15:
@@ -190,23 +209,23 @@ public class Menu
                 break;
 
                 case 16:
-                restaurante.mesa.get(i).getComanda().valor += 4.00;
-                restaurante.mesa.get(i).getComanda().consumo.add("Pudim de Leite Condenado");
+                restaurante.mesa.get(i).data.get(datinha).comanda.valor += 4.00;
+                restaurante.mesa.get(i).data.get(datinha).comanda.consumo.add("Pudim de Leite Condenado");
                 break;
 
                 case 17:
-                restaurante.mesa.get(i).getComanda().valor += 13.00;
-                restaurante.mesa.get(i).getComanda().consumo.add("Pácomê");
+                restaurante.mesa.get(i).data.get(datinha).comanda.valor += 13.00;
+                restaurante.mesa.get(i).data.get(datinha).comanda.consumo.add("Pácomê");
                 break;
 
                 case 18:
-                restaurante.mesa.get(i).getComanda().valor += 2.50;
-                restaurante.mesa.get(i).getComanda().consumo.add("Sonho de Falsa");
+                restaurante.mesa.get(i).data.get(datinha).comanda.valor += 2.50;
+                restaurante.mesa.get(i).data.get(datinha).comanda.consumo.add("Sonho de Falsa");
                 break;
 
                 default:
-                restaurante.mesa.get(i).getComanda().valor += 34.69;
-                restaurante.mesa.get(i).getComanda().consumo.add("Especialidade do Chef");
+                restaurante.mesa.get(i).data.get(datinha).comanda.valor += 34.69;
+                restaurante.mesa.get(i).data.get(datinha).comanda.consumo.add("Especialidade do Chef");
                 
 
             }
@@ -221,9 +240,9 @@ public class Menu
         System.out.printf("\nPor favor, digite o número da sua mesa: ");
         String mesa_numero = esc.next();
         int mesinha =  Integer.parseInt(mesa_numero);
-        while(!this.restaurante.mesa_existe(mesinha))
+        while(!this.restaurante.mesa_existe(mesinha, datinha))
         {
-            if (this.restaurante.mesa_existe(mesinha))
+            if (this.restaurante.mesa_existe(mesinha, datinha))
             {
                 fazer_pedido(mesinha);
             }
@@ -240,9 +259,9 @@ public class Menu
         System.out.printf("\nPor favor, digite o número da sua mesa: ");
         String mesa_numero = esc.next();
         int mesinha =  Integer.parseInt(mesa_numero);
-        if (this.restaurante.mesa_existe(mesinha))
+        if (this.restaurante.mesa_existe(mesinha, datinha))
         {
-            System.out.println("Cada cliente da mesa deverá pagar " + restaurante.mesa.get(mesinha).getComanda().calcular10Porcento());
+            System.out.println("Cada cliente da mesa deverá pagar " + restaurante.mesa.get(mesinha).data.get(datinha).comanda.calcular10Porcento());
         }
     }
     void menu_cadastra_cliente()
@@ -250,7 +269,7 @@ public class Menu
         System.out.printf("\nPor favor, digite a mesa em que o cliente deve ser cadastrado: ");
         String mesa_numero = esc.next();
         int mesinha =  Integer.parseInt(mesa_numero);
-        if (this.restaurante.mesa_existe(mesinha))
+        if (this.restaurante.mesa_existe(mesinha, datinha))
         {
             Cliente cl = new Cliente();
             System.out.printf("\nPor favor, digite o nome do cliente: ");
@@ -267,10 +286,10 @@ public class Menu
         String mesa_numero = esc.next();
         int mesinha =  Integer.parseInt(mesa_numero);
         System.out.println("\nmesa: " + mesinha);
-        if (this.restaurante.mesa_existe(mesinha))
+        if (this.restaurante.mesa_existe(mesinha, datinha))
         {
-            restaurante.mesa.get(mesinha).getComanda().listarConsumo();
-            System.out.println("O valor a ser pago é R$" + restaurante.mesa.get(mesinha).getComanda().getValor() = "0");
+            restaurante.mesa.get(mesinha).data.get(datinha).comanda.listarConsumo();
+            System.out.println("O valor a ser pago é R$" + restaurante.mesa.get(mesinha).data.get(datinha).comanda.getValor() + "0");
         }
     }
 
