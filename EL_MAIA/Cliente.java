@@ -2,15 +2,15 @@ public class Cliente
 {
     // Variáveis
     private String nome;
-
-    // Funções
+    private String email;
+    
+    // Getters & Setters
     public String getNome() {
         return nome;
     }
     public void setNome(String nome) {
         this.nome = nome;
     }
-    private String email;
     public String getEmail() {
         return email;
     }
