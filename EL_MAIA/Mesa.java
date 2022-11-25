@@ -42,7 +42,7 @@ public class Mesa
         System.out.printf("\nPor favor, digite a data para reserva da mesa " + this.numero_mesa + ": " );
 
         String dataReserva = esc.next();
-        int j;
+        int j = 0;
 
         //Verifica se a mesa ja foi reservada para aquela data
         for(int i = 0; i<data.size(); i++){
