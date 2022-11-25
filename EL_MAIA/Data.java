@@ -16,6 +16,5 @@ public class Data
     public void setDataReserva(String dataReserva) {
         this.dataReserva = dataReserva;
     }
-    ArrayList<Comanda> comanda = new ArrayList<Comanda>();
-
+    Comanda comanda = new Comanda();
 }
