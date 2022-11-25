@@ -38,11 +38,10 @@ public class Mesa
 
         //Inicializa o Scanner
         Scanner esc = new Scanner(System.in);
-        
+
         //Verifica se a mesa ja foi reservada para aquela data
         if (data_existe(dia, mes) == true)
         {
-            esc.close();
             return false;
         }
 
@@ -54,7 +53,15 @@ public class Mesa
         System.out.printf("\nPor favor, digite o numero de clientes: ");
         nClientes = esc.nextInt();
 
-        for(int i = 0; i<nClientes; i++){
+        while(nClientes == 0)
+        {
+            System.out.printf("\nUma mesa de cliente não pode ter 0 indivíduos, tente novamente;\n");
+            System.out.printf("\nPor favor, digite o numero de clientes: ");
+            nClientes = esc.nextInt();
+        }
+
+        for(int i = 0; i<nClientes; i++)
+        {
 
             darita.setReserva(true);
             Cliente cl = new Cliente();
@@ -69,7 +76,6 @@ public class Mesa
         this.data.add(darita);
 
         //Fecha o Scanner :)
-        esc.close();
         return true;
     }
 
