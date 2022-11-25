@@ -302,7 +302,7 @@ public class Menu
             System.out.println("----Lista de Bebidas----");
             restaurante.mesa.get(mesinha).data.get(j).comanda_bebida.listarConsumo();
             System.out.println("----Lista de Comidas----");
-            restaurante.mesa.get(mesinha).data.get(j).comanda_bebida.listarConsumo();
+            restaurante.mesa.get(mesinha).data.get(j).comanda_comida.listarConsumo();
             System.out.println("O valor a ser pago é R$" + ( restaurante.mesa.get(mesinha).data.get(j).comanda_bebida.getValor() + restaurante.mesa.get(mesinha).data.get(j).comanda_comida.getValor() ) + "0");
         }
     }
