@@ -1,11 +1,13 @@
+package EL_MAIA;
 import java.util.ArrayList;
 
 public class Comanda {
 
-    public double valor;
+    private double valor;
 
     // Lista de consumo
     ArrayList<String> consumo = new ArrayList<String>();
+
 
     // Funções
     void listarConsumo()
@@ -25,7 +27,9 @@ public class Comanda {
     }
 
     double dividirConta(int nPessoas)
-    {
+    {   
+        System.out.println(nPessoas);
+        System.out.println(this.valor);
         return(this.valor/nPessoas);
     }
 
@@ -34,7 +38,7 @@ public class Comanda {
         return valor;
     }
     public void setValor(double valor) {
-        this.valor = valor;
+        this.valor += valor;
     }
 
     public void addItem(String Item){
