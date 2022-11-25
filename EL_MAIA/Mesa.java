@@ -21,6 +21,14 @@ public class Mesa
 
 
     //Verifica se a mesa foi reservada para uma determinada data
+    public void inicializa_data ()
+    {
+        for(int a = 0; a < 360; a++)
+        {
+            this.data.get(a).setDatinha(true);
+        }
+    }
+
     public boolean isReserva(String dataReserva) {
 
         for(int i = 0; i<data.size(); i++){
