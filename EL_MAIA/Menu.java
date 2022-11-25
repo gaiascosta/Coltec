@@ -32,8 +32,7 @@ public class Menu
         this.dia = esc.nextInt() - 1;
         System.out.println("Por favor, digite o mes de hoje: ");
         this.mes = esc.nextInt() - 1;
-        this.datinha = (this.mes*30) + this.dia;
-        while(datinha >= 360)
+        while((dia > 30) || (mes > 12))
         {
             System.out.println("\n**Data invalida, tente novamente**\n");
             System.out.println("Por favor, digite o dia de hoje: ");
@@ -84,9 +83,13 @@ public class Menu
         System.out.printf("\nPor favor, digite o número da sua mesa: ");
         String mesa_numero = esc.next();
         int mesinha =  Integer.parseInt(mesa_numero);
-        if (this.restaurante.mesa_existe(mesinha,datinha))
+        if (this.restaurante.mesa_existe(mesinha, dia, mes))
         {
-            if (this.restaurante.mesa.get(mesinha).reservar() == true)
+            System.out.println("\nPor favor, digite o dia desejado para a reserva: ");
+            int ditito = esc.nextInt();
+            System.out.println("\nPor favor, digite o mes desejado para a reserva: ");
+            int mesito = esc.nextInt();
+            if (this.restaurante.mesa.get(mesinha).reservar(ditito, mesito) == true)
             {
                 System.out.println("\nMesa reservada com sucesso!");
             }
@@ -124,7 +127,7 @@ public class Menu
     {
         String pedido = esc.next();
         int pedidinho = Integer.parseInt(pedido);
-        if (!(this.restaurante.mesa_existe(i, datinha)))
+        if (!(this.restaurante.mesa_existe(i, dia, mes)))
         {
             return;
         }
@@ -240,9 +243,9 @@ public class Menu
         System.out.printf("\nPor favor, digite o número da sua mesa: ");
         String mesa_numero = esc.next();
         int mesinha =  Integer.parseInt(mesa_numero);
-        while(!this.restaurante.mesa_existe(mesinha, datinha))
+        while(!this.restaurante.mesa_existe(mesinha, dia, mes))
         {
-            if (this.restaurante.mesa_existe(mesinha, datinha))
+            if (this.restaurante.mesa_existe(mesinha, dia, mes))
             {
                 fazer_pedido(mesinha);
             }
@@ -259,7 +262,7 @@ public class Menu
         System.out.printf("\nPor favor, digite o número da sua mesa: ");
         String mesa_numero = esc.next();
         int mesinha =  Integer.parseInt(mesa_numero);
-        if (this.restaurante.mesa_existe(mesinha, datinha))
+        if (this.restaurante.mesa_existe(mesinha, dia, mes))
         {
             System.out.println("Cada cliente da mesa deverá pagar " + restaurante.mesa.get(mesinha).data.get(datinha).comanda.calcular10Porcento());
         }
@@ -269,7 +272,7 @@ public class Menu
         System.out.printf("\nPor favor, digite a mesa em que o cliente deve ser cadastrado: ");
         String mesa_numero = esc.next();
         int mesinha =  Integer.parseInt(mesa_numero);
-        if (this.restaurante.mesa_existe(mesinha, datinha))
+        if (this.restaurante.mesa_existe(mesinha, dia, mes))
         {
             Cliente cl = new Cliente();
             System.out.printf("\nPor favor, digite o nome do cliente: ");
@@ -286,7 +289,7 @@ public class Menu
         String mesa_numero = esc.next();
         int mesinha =  Integer.parseInt(mesa_numero);
         System.out.println("\nmesa: " + mesinha);
-        if (this.restaurante.mesa_existe(mesinha, datinha))
+        if (this.restaurante.mesa_existe(mesinha, dia, mes))
         {
             restaurante.mesa.get(mesinha).data.get(datinha).comanda.listarConsumo();
             System.out.println("O valor a ser pago é R$" + restaurante.mesa.get(mesinha).data.get(datinha).comanda.getValor() + "0");
