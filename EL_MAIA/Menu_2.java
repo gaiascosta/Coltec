@@ -7,7 +7,26 @@ public class Menu
     Restaurante restaurante = new Restaurante();
     int dia;
     int mes;
+
     // Funções
+    public int scanf()
+    {
+        while(true)
+        {
+            try
+            {
+                int valor = esc.nextInt();
+                return valor;
+            }
+            catch (Exception e)
+            {
+                System.out.println("\n*** INVÁLIDO ***");
+                System.out.printf("\n Tente novamente: ");
+                esc.next();
+            }
+        }
+    }
+
     void imprime_menu()
     {
         System.out.println("\nDigite [0] para SAIR");
@@ -21,21 +40,20 @@ public class Menu
     void opcoes()
     {
         this.restaurante.inicializar_mesas();
-        System.out.println("Por favor, digite o dia de hoje: ");
-        this.dia = esc.nextInt();
-        System.out.println("Por favor, digite o mes de hoje: ");
-        this.mes = esc.nextInt();
-        while((dia > 30) || (mes > 12) || (dia <= 0) || (mes <= 0))
+        System.out.printf("\nPor favor, digite o dia de hoje: ");
+        this.dia = scanf();
+        System.out.printf("\nPor favor, digite o mes de hoje: ");
+        this.mes = scanf();
+        while((dia > 31) || (mes > 12) || (dia <= 0) || (mes <= 0))
         {
             System.out.println("\n**Data invalida, tente novamente**\n");
-            System.out.println("Por favor, digite o dia de hoje: ");
-            this.dia = esc.nextInt();
-            System.out.println("Por favor, digite o mes de hoje: ");
-            this.mes = esc.nextInt();
+            System.out.printf("\nPor favor, digite o dia de hoje: ");
+            this.dia = scanf();
+            System.out.printf("\nPor favor, digite o mes de hoje: ");
+            this.mes = scanf();
         }
         imprime_menu();
-        String escolha = esc.next();
-        int escolinha = Integer.parseInt(escolha);
+        int escolinha = scanf();
         while(escolinha != 0)
         {
             switch(escolinha)
@@ -65,20 +83,18 @@ public class Menu
                 break;
             }
             imprime_menu();
-            escolha = esc.next();
-            escolinha = Integer.parseInt(escolha);
+            escolinha = scanf();
         }
     }
 
     public void menu_reservar ()
     {
         System.out.printf("\nPor favor, digite o número da sua mesa: ");
-        String mesa_numero = esc.next();
-        int mesinha =  Integer.parseInt(mesa_numero);
+        int mesinha =  scanf();
         System.out.println("\nPor favor, digite o dia desejado para a reserva: ");
-        int ditito = esc.nextInt();
+        int ditito = scanf();
         System.out.println("\nPor favor, digite o mes desejado para a reserva: ");
-        int mesito = esc.nextInt();
+        int mesito = scanf();
         if (this.restaurante.mesa.get(mesinha).reservar(ditito, mesito) == true)
         {
             System.out.println("\nMesa reservada com sucesso!");
@@ -108,7 +124,7 @@ public class Menu
             System.out.printf("\n[18] Sonho de Falsa...................................R$ 2,50\n[*] Especialidade do Chef.............................R$ 34,69\n[0] Fim do Pedido\n");
 
             System.out.printf("\n\nPor favor, digite o número da sua mesa: ");
-            int mesinha =  esc.nextInt();
+            int mesinha =  scanf();
             if (this.restaurante.mesa_existe(mesinha, dia, mes) == true)
             {
                 fazer_pedido(mesinha, dia, mes);
@@ -122,8 +138,7 @@ public class Menu
             j++;
         }
         System.out.printf("\n\nPor favor, digite o código dos itens desejados: ");
-        String pedido = esc.next();
-        int pedidinho = Integer.parseInt(pedido);
+        int pedidinho = scanf();
 
         while (pedidinho != 0)
         {
@@ -224,8 +239,7 @@ public class Menu
                 
 
             }
-            pedido = esc.next();
-            pedidinho = Integer.parseInt(pedido);
+            pedidinho = scanf();
             
         }
         System.out.println("\nObrigada por comprar no Buchinho Cheio!");
@@ -233,8 +247,7 @@ public class Menu
     public void menu_dividir()
     {
         System.out.printf("\nPor favor, digite o número da sua mesa: ");
-        String mesa_numero = esc.next();
-        int mesinha =  Integer.parseInt(mesa_numero);
+        int mesinha =  scanf();
         int j = 0;
         if (this.restaurante.mesa_existe(mesinha, dia, mes))
         {
@@ -248,8 +261,7 @@ public class Menu
     public void menu_10per()
     {
         System.out.printf("\nPor favor, digite o número da sua mesa: ");
-        String mesa_numero = esc.next();
-        int mesinha =  Integer.parseInt(mesa_numero);
+        int mesinha = scanf();
         if (this.restaurante.mesa_existe(mesinha, dia, mes))
         {
             int j = 0;
@@ -263,8 +275,7 @@ public class Menu
     void menu_cadastra_cliente()
     {
         System.out.printf("\nPor favor, digite a mesa em que o cliente deve ser cadastrado: ");
-        String mesa_numero = esc.next();
-        int mesinha =  Integer.parseInt(mesa_numero);
+        int mesinha = scanf();
         if (this.restaurante.mesa_existe(mesinha, dia, mes))
         {
             Cliente cl = new Cliente();
@@ -279,8 +290,7 @@ public class Menu
     void menu_listar()
     {
         System.out.printf("\nPor favor, digite o número da sua mesa: ");
-        String mesa_numero = esc.next();
-        int mesinha =  Integer.parseInt(mesa_numero);
+        int mesinha =  scanf();
         if (this.restaurante.mesa_existe(mesinha, dia, mes))
         {
             System.out.println("teste" + mesinha);
