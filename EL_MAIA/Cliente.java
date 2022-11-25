@@ -1,5 +1,3 @@
-package EL_MAIA;
-
 public class Cliente 
 {
     // Variáveis
