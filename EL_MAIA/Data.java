@@ -1,3 +1,5 @@
+///////////// NAO USE ESSA DATA ///////////////////////
+
 public class Data 
 {
     //Variáveis
