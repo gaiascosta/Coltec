@@ -4,8 +4,8 @@ public class Data
     private boolean reserva;
     private int dia;
     private int mes;
-    Comanda comanda_bebida = new Comanda();
-    Comanda comanda_comida = new Comanda();
+    private Comanda comanda_bebida = new Comanda();
+    private Comanda comanda_comida = new Comanda();
 
     //Getters and Setters
     public int getMes() {
@@ -25,5 +25,17 @@ public class Data
     }
     public void setReserva(boolean reserva) {
         this.reserva = reserva;
+    }
+    public Comanda getComanda_bebida() {
+        return comanda_bebida;
+    }
+    public void setComanda_bebida(Comanda comanda_bebida) {
+        this.comanda_bebida = comanda_bebida;
+    }
+    public Comanda getComanda_comida() {
+        return comanda_comida;
+    }
+    public void setComanda_comida(Comanda comanda_comida) {
+        this.comanda_comida = comanda_comida;
     }
 }
