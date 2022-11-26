@@ -2,32 +2,19 @@ import java.util.ArrayList;
 
 public class Restaurante 
 {
-    //Lista de Mesas
-    ArrayList<Mesa> mesa = new ArrayList<Mesa>();
-
     // Variáveis
     private String nome = "Buchinho Cheio";
     private String endereco = "Rua das Borboletas Psicodélicas";
     private int numero_mesas = 20;
+    ArrayList<Mesa> mesa = new ArrayList<Mesa>();
 
-    //Inicializando as Mesas
-    public void inicializar_mesas()
-    {
-        // Inicializando a data 0
-        Data darita = new Data();
-        darita.setDia(0);
-        darita.setMes(0);
-
-        for(int i = 0; i<this.numero_mesas; i++)
-        {
-            Mesa mesita = new Mesa();
-            mesita.setNumero_mesa(i);
-            mesita.data.add(darita);
-            this.mesa.add(mesita);
-        }
+    // Getters & Setters
+    public int getNumero_mesas() {
+        return numero_mesas;
     }
-    
-    // Getters and Setters
+    public void setNumero_mesas(int numero_mesas) {
+        this.numero_mesas = numero_mesas;
+    }
     public String getNome() {
         return nome;
     }
@@ -41,18 +28,37 @@ public class Restaurante
         this.endereco = endereco;
     }
 
-    // Funções
-    public boolean mesa_existe(int n_mesa, int dia, int mes)
+    // ----- Funções -----
+
+    //Inicializando as Mesas
+    public void inicializar_mesas()
     {
-        for(int i = 0; i<mesa.size(); i++)
+        // Inicializando a data 0
+        Data darita = new Data();
+        darita.setDia(0);
+        darita.setMes(0);
+
+        for(int i = 0; i<this.numero_mesas; i++) // Continua enquanto i for menor que o número de mesas do restaurante
         {
-            if ((this.mesa.get(i).getNumero_mesa() == n_mesa)&&(mesa.get(i).data_existe(dia, mes) == true))
+            Mesa mesita = new Mesa(); // Cria um objeto
+            mesita.setNumero_mesa(i);
+            mesita.data.add(darita);
+            this.mesa.add(mesita); // Adiciona o objeto em mesa
+        }
+    }
+    
+    public boolean mesa_existe(int n_mesa, int dia, int mes) // Verifica se a mesa existe
+    {
+        for(int i = 0; i<mesa.size(); i++) // Continua enquanto i for menor que o número de mesas da lista
+        {
+            // O código abaixo anda pelas mesas verificando se elas existem e se tem reserva na data
+            if ((this.mesa.get(i).getNumero_mesa() == n_mesa)&&(mesa.get(i).data_existe(dia, mes) == true)) 
             {
-                return true;
+                return true; // Caso a mesa exista e tenha reserva no dia, retorna true
             }
         }
         System.out.println("Mesa Inexistente ou sem reserva");
-        return false;
+        return false; // Caso a mesa não exista ou nõa tenha reserva no dia, retorna false
 
     }
 }
