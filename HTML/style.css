@@ -1,0 +1,37 @@
+html{
+    height: 2rem;
+}
+body{
+    background-color: #264653;
+    color: #E9C46A;
+    text-align: center;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+p{
+    line-height: 1.5rem;
+    text-indent: 1rem;
+}
+a:link{
+    font-weight: bold;
+    color: #E76F51;
+}
+a:hover{
+    font-weight: bold;
+    color: #2A9D8F;
+}
+abbr{
+    font-weight: bold;
+    color: #E76F51;
+}
+h1{
+    height: 1.8rem;
+}
+h2{
+    height: 1.4rem;
+}
+h3{
+    height: 1.2rem;
+}
+h1, h2, h3{
+    text-align: center;
+}
