@@ -3,19 +3,19 @@ import java.util.Random;
 public class Sapos extends Thread
 {
     private String nome;
-    public String getNome() 
-    {
-        return nome;
-    }
     public void setNome(String nome) 
     {
         this.nome = nome;
     }
-
+    public String getNome()
+    {
+        return this.nome;
+    }
 
     private int distancia_percorrida;
     private int tamanho_corrida;
     private int max_pulo = 10;
+    boolean terminou = false;
 
     public void getTamanho_Corrida(int Tamanho_Corrida)
     {
@@ -35,5 +35,10 @@ public class Sapos extends Thread
                 Thread.sleep(200); // esperar um pouco entre saltos
             } catch (InterruptedException e) {}
         }
+        this.terminou = true;
+    }
+
+    public int getPosicao(){
+        return this.distancia_percorrida;
     }
 }
