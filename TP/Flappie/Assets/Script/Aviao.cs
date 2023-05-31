@@ -3,25 +3,40 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Aviao : MonoBehaviour {
-    [SerializeField]private float forca = 9;
+    [SerializeField]private float forca;
     Rigidbody2D fisica;
     private Diretor diretor;
+    private Vector3 posicaoInicial;
 
     private void Awake()
     {
+        this.posicaoInicial = this.transform.position;
         this.fisica = this.GetComponent<Rigidbody2D>();
+    }
+
+    private void Start()
+    {
         this.diretor = GameObject.FindObjectOfType<Diretor>();
     }
 
-    private void Update () { 
+    private void Update () 
+    { 
         if(Input.GetButtonDown("Fire1") || Input.GetKeyDown("space"))
         {
             this.Impulsionar();
         }
     }
 
+    public void Reiniciar()
+    {
+        this.transform.position = this.posicaoInicial;
+        this.fisica.simulated = true;
+    }
+
+
     private void Impulsionar()
     {
+        this.fisica.velocity = Vector2.zero;
         this.fisica.AddForce(Vector2.up * forca, ForceMode2D.Impulse);
     }
 
