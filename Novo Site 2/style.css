@@ -15,22 +15,42 @@
     background-color: rgb(23, 78, 80);
 }
 
-.intro{
+#intro{
     background-color: cadetblue;
 }
 
 .nav-link{
     font-size: large;
     font-family: titleFont;
-    color: antiquewhite;
+    color: rgb(198, 225, 238);
 }
 
-img{
-    width: 25%;
+@media (max-width: 575px)
+{
+  .qrCode{
+    width: 50%;
+    border-radius: 0.6em;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 960px)
+{
+    .qrCode{
+        width: 50%;
+        border-radius: 2.2em;
+    }
+}
+
+@media (min-width: 961px)
+{
+    .qrCode{
+        width: 30%;
+        border-radius: 4em;
+    }
 }
 
 .bi-twitter, .bi-instagram, .bi-linkedin{
-    color: antiquewhite;
+    color: rgb(198, 225, 238);
 }
 
 .card{
@@ -39,15 +59,16 @@ img{
 
 footer{
     background-color: rgb(23, 78, 80);
-    color: antiquewhite;
+    color: rgb(198, 225, 238);
 }
 
 body{
     font-family: textFont;
+    background-color: rgb(198, 225, 238);
 }
 
 .navbar-brand{
     font-family: brandFont;
     font-size: 1.8em;
-    color: antiquewhite;
+    color: rgb(198, 225, 238);
 }
