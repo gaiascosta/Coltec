@@ -1,0 +1,53 @@
+@font-face {
+    font-family: brandFont;
+    src: url(Fonts/Silky\ Queen.otf);
+}
+@font-face {
+    font-family: titleFont;
+    src: url(Fonts/Philosopher-Bold.ttf);
+}
+@font-face {
+    font-family: textFont;
+    src: url(Fonts/Philosopher-Regular.ttf);
+}
+
+.navbar{
+    background-color: rgb(23, 78, 80);
+}
+
+.intro{
+    background-color: cadetblue;
+}
+
+.nav-link{
+    font-size: large;
+    font-family: titleFont;
+    color: antiquewhite;
+}
+
+img{
+    width: 25%;
+}
+
+.bi-twitter, .bi-instagram, .bi-linkedin{
+    color: antiquewhite;
+}
+
+.card{
+    background-color: cadetblue;
+}
+
+footer{
+    background-color: rgb(23, 78, 80);
+    color: antiquewhite;
+}
+
+body{
+    font-family: textFont;
+}
+
+.navbar-brand{
+    font-family: brandFont;
+    font-size: 1.8em;
+    color: antiquewhite;
+}
