@@ -1,0 +1,180 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Roboto',sans-serif;
+    margin:0;
+}
+
+.page-wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows:0.1fr 0.1fr 0.8fr;
+}
+
+nav{
+    padding:0;
+    justify-content:center;
+    align-items:center;
+    text-align:right;
+    display:grid;
+    grid-template-columns:0.4fr 0.6fr;
+    background-color:crimson;
+}
+
+.logo{
+    font-family: 'Lobster', cursive;
+    text-align: left;
+    font-size: 27px;
+    padding-left: 5%;
+}
+
+.menu{
+    display: flex;
+    flex-direction: row-reverse;
+    padding-right: 5%;
+}
+
+.menu a{
+    color: black;
+    font-weight:900;
+    text-decoration: none;
+    font-size: 20px;
+    padding: 20px 20px;
+}
+
+.menu a:hover{
+    color:midnightblue;
+    border-top: 4px solid black;
+}
+
+.header{
+    padding-top:5%;
+    margin:0 5%;
+    display:flex;
+    flex-flow:row wrap;
+    justify-content:center;
+    align-items:center;
+}
+
+.headline{
+    flex:40%;
+    text-align:center;
+}
+
+.headline h2 {
+    font-weight: 900;
+    font-size: 40px;
+    padding: 0;
+    margin: 0;
+    color:midnightblue;
+}
+.headline p{
+    font-size:25px;
+}
+
+.img-headline{
+    margin-left:1%;
+    flex:40%;
+    text-align:center;
+}
+
+main{
+    margin:0 5%;
+    margin-top:20px;
+    text-align:justify;
+    display:grid;
+    gap:1rem;
+    grid-template-columns:repeat(auto-fit, minmax(500px, 1fr));
+}
+
+main h3{
+    width:100%;
+    font-size:40px;
+    text-align:center;
+    margin:0;
+    font-family:'Lobster', cursive;
+    color:midnightblue;
+}
+
+main div{
+    background:crimson;
+    border-radius:5px;
+    padding:5%;
+    box-shadow:10px 10px black;
+}
+
+aside{
+    margin: 0 5%;
+    padding-bottom:5%;
+}
+
+aside ul{
+    background: crimson;
+    padding:2% 2% 3% 2%;
+    border-radius: 5px;
+    box-shadow:10px 10px black;
+    list-style-type: none;
+}
+
+aside h3{
+    font-family: 'Lobster', cursive;
+    font-weight: bold;
+    font-size: 40px;
+    color:midnightblue;
+}
+
+aside a{
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    color:black;
+}
+
+aside a:hover{
+    color:midnightblue;
+}
+
+footer {
+    background-color: crimson;
+    box-shadow:0px -4px black;
+    font-weight: bold;
+    text-align: center;
+    display: block;
+    width: 98%;
+    height: 20px;
+    bottom: 0;
+    padding: 1%;
+    position: fixed;
+}
+
+@media only screen and (max-width: 900px){
+    .logo{
+        font-size: 25px;
+    }
+    .menu a{
+        font-size: 17px;
+        padding: 7% 7%;
+    }
+    aside{
+        padding-bottom: 0;
+    }
+}
+
+@media only screen and (max-width: 720px) {
+    .logo{
+        font-size: 15px;
+    }
+    .menu a{
+        font-size: 15px;
+        padding: 5% 5%;
+    }
+    main {
+        grid-template-columns:repeat(1, minmax(450px, 1fr));
+    }
+    aside{
+        padding-bottom: 0;
+    }
+}
