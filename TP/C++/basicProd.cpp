@@ -1,4 +1,6 @@
 #include <iostream>
+#define SUCESSO 0
+ 
 using namespace std;
  
 int main() {
@@ -8,7 +10,9 @@ int main() {
     std::cin >> a;
     std::cin >> b;
 
-    std::cout << "X = " << (a + b) << "\n";
+    std::cout << "PROD = " << (a * b) << "\n";
  
     return 0;
+ 
+    return SUCESSO;
 }
