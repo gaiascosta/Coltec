@@ -1,0 +1,44 @@
+@font-face {
+    font-family: mainShowFont;
+    src: url(fontes/Mercy\ Christole.ttf);
+}
+@font-face {
+    font-family: loginFont;
+    src: url(fontes/Mars\ Brands.ttf);
+}
+
+body{
+    background-image: url("imagens/totoro.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: black;
+}
+
+.mainPageContainer{
+    height: 860px;
+}
+
+#tituloShow{
+    font-family: mainShowFont;
+    font-size: 9em;
+}
+
+.firstLogin{
+    font-family: loginFont;
+    font-size: 2em;
+    text-decoration: none;
+    color: black;
+}
+
+.firstLogin:hover{
+    color: white;
+}
+
+.theMiddle{
+    margin-left: 15%;
+    margin-left: 15%;
+}
+
+.divTitulo, .divLogin{
+    width: 400px;
+}

@@ -1,0 +1,23 @@
+[
+    {
+        "login": "a",
+        "senha": "$2y$10$Qu9p1MEejSbQ.Jq\/D9CK6.ku4Qiwedc5jxV40pSqn9rb.5R7SLEai",
+        "nome": "a",
+        "email": "a@a",
+        "recorde": 5
+    },
+    {
+        "login": "l",
+        "senha": "$2y$10$wiD9HwXI5v4G1WeQ93qF8uMOwVYiWiQgrcuk4\/RpXJ48kGDk7Uky6",
+        "nome": "l",
+        "email": "l@l",
+        "recorde": 0
+    },
+    {
+        "login": "i",
+        "senha": "$2y$10$eW7VYuW9Xsreppr\/6undHexM.95fQc9XDn8ws3qwkfgWaoxYGkrem",
+        "nome": "i",
+        "email": "i@i",
+        "recorde": 0
+    }
+]

@@ -1,0 +1,52 @@
+[
+    {
+        "enunciado": "Quem compôs o Hino da Indepêndencia?",
+        "alternativas": [
+            "Dom Pedro I.",
+            "Manuel Bandeira",
+            "Castro Alves",
+            "Carlos Gomes"
+        ],
+        "resposta": 1
+    },
+    {
+        "enunciado": "Que animal da fauna brasileira está retratado na nota de dez reais?",
+        "alternativas": [
+            "Jabuti",
+            "Onça",
+            "Arara",
+            "Tucano"
+        ],
+        "resposta": 3
+    },
+    {
+        "enunciado": "Quando começou e terminou a primeira guera mundial?",
+        "alternativas": [
+            "1914 - 1918",
+            "1912 - 1915",
+            "1902 - 1908",
+            "1920 - 1930"
+        ],
+        "resposta": 2
+    },
+    {
+        "enunciado": "Quantos noves tem de 0 a 100?",
+        "alternativas": [
+            "10",
+            "11",
+            "20",
+            "21"
+        ],
+        "resposta": 3
+    },
+    {
+        "enunciado": "Qual tipo de pedra foi usada na construção da estutua do Cristo Redentor?",
+        "alternativas": [
+            "Ardósia",
+            "Mármore",
+            "Granito",
+            "Pedra-Sabão"
+        ],
+        "resposta": 4
+    }
+]
