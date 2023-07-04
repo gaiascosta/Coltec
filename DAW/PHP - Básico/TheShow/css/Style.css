@@ -23,14 +23,20 @@ body{
     font-size: 9em;
 }
 
-.firstLogin{
+.firstLogin, .firstLoginJogar{
     font-family: loginFont;
     font-size: 2em;
     text-decoration: none;
     color: black;
 }
 
-.firstLogin:hover{
+.firstLoginJogar{
+    background-color: transparent;
+    padding: 0;
+    border: none;
+}
+
+.firstLogin:hover, .firstLoginJogar:hover{
     color: white;
 }
 

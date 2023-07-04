@@ -39,7 +39,7 @@ if (isset($_POST['reg'])) {
                 <a class="firstLogin my-3" href="registrar.php">Cadastro</a>
             <?php else: ?>
                 <form action="quiz.php" method="get">
-                    <input class="firstLogin my-3" type="submit" value="Jogar">
+                    <input class="firstLoginJogar my-3" type="submit" value="Jogar">
                     <input type="hidden" name="id" value="1">
                 </form>
 

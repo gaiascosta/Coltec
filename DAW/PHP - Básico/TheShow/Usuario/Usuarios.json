@@ -19,5 +19,19 @@
         "nome": "i",
         "email": "i@i",
         "recorde": 0
+    },
+    {
+        "login": "gaias",
+        "senha": "$2y$10$SR7W.hHpYIZlW56Sh7WSMe1GrAsbRZtN6ZgijEQARvtKUpSmQKnKe",
+        "nome": "gabi",
+        "email": "g@g",
+        "recorde": 0
+    },
+    {
+        "login": "lagabi",
+        "senha": "$2y$10$O\/o8nbrMhWDPzXckngEXL.2g2\/17Gu8CnoV1HBZeu5mySUe8TywVG",
+        "nome": "lagb",
+        "email": "a@gxkdfjg",
+        "recorde": 0
     }
 ]

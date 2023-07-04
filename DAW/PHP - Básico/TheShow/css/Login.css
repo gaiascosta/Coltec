@@ -1,0 +1,28 @@
+@font-face {
+    font-family: loginFont;
+    src: url(fontes/Mars\ Brands.ttf);
+}
+
+.logarContainer{
+    height: 800px;
+}
+
+body{
+    font-family: loginFont;
+    background-color: rgb(123, 179, 192);
+}
+
+.loginBox{
+    padding: 6em;
+    padding-top: 8em;
+    padding-bottom: 8em;
+    border-radius: 0.5em;
+    border: solid black;
+    background-color: rgb(255, 255, 255, 0.7);
+}
+
+.formPage{
+    border: solid black;
+    border-radius: 0.8em;
+    border-width: 0.15em;
+}
