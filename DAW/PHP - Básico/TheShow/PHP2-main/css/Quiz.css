@@ -1,0 +1,25 @@
+@font-face {
+    font-family: loginFont;
+    src: url(fontes/Mars\ Brands.ttf);
+}
+
+body{
+    font-family: loginFont;
+    background-color: rgb(123, 179, 192);
+}
+
+.containerQuiz{
+    height: 500px;
+}
+
+.perguntinhas{
+    margin-right: 25px;
+    margin-left: 10px;
+}
+
+.theFooter {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: aquamarine;
+}

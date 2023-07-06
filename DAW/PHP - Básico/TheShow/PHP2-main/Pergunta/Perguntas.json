@@ -1,21 +1,21 @@
 [
     {
-        "enunciado": "Quem compôs o Hino da Indepêndencia?",
+        "enunciado": "Qual a moeda oficial do Reino Unido?",
         "alternativas": [
-            "Dom Pedro I.",
-            "Manuel Bandeira",
-            "Castro Alves",
-            "Carlos Gomes"
+            "Libra Esterlina",
+            "Euro",
+            "Franco",
+            "Peso"
         ],
         "resposta": 1
     },
     {
-        "enunciado": "Que animal da fauna brasileira está retratado na nota de dez reais?",
+        "enunciado": "Quantos elementos quimicos existem na tabela periódica?",
         "alternativas": [
-            "Jabuti",
-            "Onça",
-            "Arara",
-            "Tucano"
+            "108",
+            "112",
+            "118",
+            "126"
         ],
         "resposta": 3
     },
@@ -27,7 +27,7 @@
             "1902 - 1908",
             "1920 - 1930"
         ],
-        "resposta": 2
+        "resposta": 1
     },
     {
         "enunciado": "Quantos noves tem de 0 a 100?",

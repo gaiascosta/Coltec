@@ -1,0 +1,86 @@
+[
+    {
+        "login": "a",
+        "senha": "$2y$10$Qu9p1MEejSbQ.Jq\/D9CK6.ku4Qiwedc5jxV40pSqn9rb.5R7SLEai",
+        "nome": "a",
+        "email": "a@a",
+        "recorde": 0
+    },
+    {
+        "login": "g",
+        "senha": "$2y$10$tDT0stHDI6BNWWpCMfSqdedNnDRdH8di02agVM3yIEOH5rClM9s\/q",
+        "nome": "g",
+        "email": "g@g",
+        "recorde": 0
+    },
+    {
+        "login": "f",
+        "senha": "$2y$10$XKTVcR\/WGHw22.mPvCkbkuli0r.74c63oQEv5YKwE7dEUFfLSWCjC",
+        "nome": "f",
+        "email": "f@f",
+        "recorde": 0
+    },
+    {
+        "login": "l",
+        "senha": "$2y$10$5v0pok2PJ3U1ZQ8kz3.QcuV7hGehkbMz1w9NjDdcrK\/pceX4o0YTq",
+        "nome": "l",
+        "email": "l@l",
+        "recorde": 5
+    },
+    {
+        "login": "q",
+        "senha": "$2y$10$diuTfGCI993\/sOYqJw4iM.dxoop2F25dVbE9W6KCyiCMa.6DHUx5O",
+        "nome": "q",
+        "email": "q@q",
+        "recorde": 0
+    },
+    {
+        "login": "i",
+        "senha": "$2y$10$I5JhOBhHK6EkwIk\/Z9fxWO59\/xoJCA1xXtfTOx7TQqbg3fhOkQAQe",
+        "nome": "i",
+        "email": "i@i",
+        "recorde": 0
+    },
+    {
+        "login": "j",
+        "senha": "$2y$10$Avy3yadgKR4639t\/tN7sCOWr3x46lfDh2j1K7Hl3PegUHIS27hUS.",
+        "nome": "j",
+        "email": "j@j",
+        "recorde": 0
+    },
+    {
+        "login": "u",
+        "senha": "$2y$10$NI67WAHhkWpcZOuzBFDU0OQUR2ozgsvCHR6xVQZDuE\/7gq.vEYUr2",
+        "nome": "u",
+        "email": "u@u",
+        "recorde": 1
+    },
+    {
+        "login": "y",
+        "senha": "$2y$10$FcqxBz4txYmNtFl2745qX.zDwR\/hDgkSnNKQU6DUeIgbbKCs4a11m",
+        "nome": "y",
+        "email": "y@y",
+        "recorde": 0
+    },
+    {
+        "login": "gaias",
+        "senha": "$2y$10$W9ugD5BT.Dqg4EFQbG.SvuhFsaT50XgVnHDuK75h64BRsNvSmwEZe",
+        "nome": "gabi",
+        "email": "a@g",
+        "recorde": 6
+    },
+    {
+        "login": "gaiascosta",
+        "senha": "$2y$10$cekx7uofS\/R164xtdF4EPOpW2KSz2kfVMWHSvp9CbZhv95nVBR442",
+        "nome": "Gabiz",
+        "email": "g@gaias",
+        "recorde": 5
+    },
+    {
+        "login": "abelha",
+        "senha": "$2y$10$POXOR0hDKuHrSB5YOFp6zeUdwCkhirE.ge9eggvPg2bLP0i86L1fO",
+        "nome": "bb",
+        "email": "a@b",
+        "recorde": 0
+    }
+]

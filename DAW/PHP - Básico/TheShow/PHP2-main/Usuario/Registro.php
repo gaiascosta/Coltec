@@ -25,14 +25,14 @@
 	    private function loginExiste(){
 		    for ($i=0; $i < count($this->usuarios); $i++) { 
 			    if($this->login == $this->usuarios[$i]['login']){
-				    header("location: ../registrar.php");
+				    header("location: Usuario/Registrar.php");
 				    return true;
 			    }
 		    }
 
             for ($i=0; $i < count($this->usuarios); $i++) { 
 			    if($this->email == $this->usuarios[$i]['email']){
-				    header("location: ../registrar.php");
+				    header("location: Usuario/Registrar.php");
 				    return true;
 			    }
 		    }
@@ -44,7 +44,7 @@
                 $novoUsuarioArray = $this->novoUsuario->toArray();
                 $this->usuarios[] = $novoUsuarioArray;
 			    file_put_contents($this->arquivo, json_encode($this->usuarios, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
-				$_SESSION['logado'] = $this->novoUsuario;
+				$_SESSION['logado'] = $novoUsuarioArray;
 		    }
 	    }
 }

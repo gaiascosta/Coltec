@@ -1,20 +1,3 @@
-<?php
-require "Usuario/Login.php";
-require "Usuario/Registro.php";
-require "Pergunta/CarregaPergunta.php";
-
-//Cada uma recebe os dados de uma página específica para poder
-//chamar as funções de criação de sessão
-session_start();
-if (isset($_POST['log'])) {
-    $login = new Login($_POST['login'], $_POST['senha']);
-}
-
-if (isset($_POST['reg'])) {
-    $registro = new Registro($_POST['novoLogin'], $_POST['email'], $_POST['nome'], $_POST['novaSenha']);
-}
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -34,19 +17,11 @@ if (isset($_POST['reg'])) {
         </div>
         <div class="theMiddle"></div>
         <div class="divLogin d-flex flex-column">
-            <?php if (!isset($_SESSION['logado'])): ?>
-                <a class="firstLogin my-3" href="logar.php">Login</a>
-                <a class="firstLogin my-3" href="registrar.php">Cadastro</a>
-            <?php else: ?>
-                <form action="quiz.php" method="get">
-                    <input class="firstLoginJogar my-3" type="submit" value="Jogar">
-                    <input type="hidden" name="id" value="1">
-                </form>
-
-                <a class="firstLogin my-3" href="Usuario/Logout.php">Sair</a>
-            <?php endif; ?>
+            <a class="firstLogin my-3" href="nextIndex.php">Jogar</a>
         </div>
     </div>
+
+    <footer class="theFooter"><?php include("footer.inc")?></footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"

@@ -1,10 +1,3 @@
-<?php
-//Existe para evitar o acesso à página com uma sessão já ativa
-if (isset($_SESSION["logado"])) {
-    header("Location: index.php");
-}
-?>
-
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -13,7 +6,7 @@ if (isset($_SESSION["logado"])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/Login.css">
+    <link rel="stylesheet" href="../css/Login.css">
     <title>Show do Milhão</title>
 </head>
 
@@ -21,9 +14,9 @@ if (isset($_SESSION["logado"])) {
     <div class="page-wrapper">
 
         <main>
-            <div class="d-flex justify-content-center align-items-center logarContainer">
+            <div class="d-flex justify-content-center align-items-center LogarContainer">
                 <div class="loginBox">
-                    <form action="index.php" method="post">
+                    <form action="../nextIndex.php" method="post">
                         Login: <input type="text" name="login" class="mx-3 formPage" required><br><br>
                         Senha: <input type="password" name="senha" class="mx-3 formPage" required><br><br>
                         <input type="hidden" name="log">

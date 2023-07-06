@@ -12,28 +12,29 @@
             $this->login = $login;
             $this->senha = $senha;
             $this->usuarios = json_decode(file_get_contents($this->arquivo), true);
-            $this->logar();
+            $this->Logar();
         }
 
-        private function logar(){
+        private function Logar(){
             $a = 0;
             for ($i=0; $i < count($this->usuarios); $i++) {
 			    if($this->login == $this->usuarios[$i]['login']){
-                    $a++;
                     if (password_verify($this->senha, $this->usuarios[$i]['senha'])) {
                         $this->usuario = $this->usuarios[$i];
                         //Salvando todo o objeto user do JSON na SESSION
                         $_SESSION['logado'] = $this->usuario;
+                        $a++;
                     } else{
-                        header("location: logar.php");
+                        header("location: Usuario/Logar.php");
                     }
 			    }
-            }
+		    }
             //Se não existir esse login, retorna à página
             if($a == 0){
-                header("location: logar.php");
+                echo '2';
+                header("location: Usuario/Logar.php");
             }
-		}
+        }
 
     }
 ?>

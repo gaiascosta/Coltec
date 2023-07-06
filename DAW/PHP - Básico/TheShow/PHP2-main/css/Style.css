@@ -1,0 +1,87 @@
+@font-face {
+    font-family: mainShowFont;
+    src: url(fontes/Mercy\ Christole.ttf);
+}
+
+@font-face {
+    font-family: loginFont;
+    src: url(fontes/Mars\ Brands.ttf);
+}
+
+body {
+    background-image: url("imagens/totoro.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: black;
+}
+
+.mainPageContainer {
+    height: 860px;
+}
+
+#tituloShow {
+    font-family: mainShowFont;
+    font-size: 9em;
+}
+
+.firstLogin,
+.firstLoginJogar {
+    font-family: loginFont;
+    font-size: 2em;
+    text-decoration: none;
+    color: black;
+}
+
+.firstLoginJogar {
+    background-color: transparent;
+    padding: 0;
+    border: none;
+}
+
+.firstLogin:hover,
+.firstLoginJogar:hover {
+    color: white;
+}
+
+.theMiddle {
+    margin-left: 15%;
+    margin-left: 15%;
+}
+
+.divTitulo,
+.divLogin {
+    width: 400px;
+}
+
+.pv {
+    font-family: mainShowFont;
+    position: absolute;
+    top: 36%;
+    left: 34%;
+    font-size: 150px;
+}
+
+.voltar {
+    font-family: loginFont;
+    color: black;
+    font-size: 1.5em;
+    padding: 5px;
+    background-color: rgb(252, 222, 86);
+    border-radius: 0.4em;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    border: solid black;
+    text-decoration: none;
+}
+
+.voltar:hover {
+    background-color: rgb(229, 184, 44);
+}
+
+.theFooter {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: aquamarine;
+}
