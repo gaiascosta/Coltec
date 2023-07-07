@@ -1,5 +1,5 @@
 <?php
-require "Usuario.php";
+require "User.php";
 session_start();
 $username = $_SESSION["logado"]["login"];
 //Cookie de última sessão

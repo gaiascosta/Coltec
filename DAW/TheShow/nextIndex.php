@@ -1,7 +1,7 @@
 <?php
 require "Usuario/Login.php";
 require "Usuario/Registro.php";
-include("Pergunta/CarregaPergunta.inc");
+include("Pergunta/perguntas.inc");
 //Cada uma recebe os dados de uma página específica para poder
 //chamar as funções de criação de sessão
 session_start();
@@ -24,11 +24,11 @@ if (isset($_POST['reg'])) {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <link rel="stylesheet" href="css/Style.css">
-    <title>Document</title>
+    <title>The Show</title>
 </head>
 
 <body>
-    <?php include("navbar.inc")?>
+    <?php include("menu.inc")?>
     <div class="mainPageContainer d-flex justify-content-center align-items-center">
         <div class="divTitulo text-center">
             <h1 class="mx-5" id="tituloShow">Show do Bilhão</h1>
@@ -39,7 +39,7 @@ if (isset($_POST['reg'])) {
                 <a class="firstLogin my-3" href="Usuario/Logar.php">Login</a>
                 <a class="firstLogin my-3" href="Usuario/Registrar.php">Cadastro</a>
             <?php else: ?>
-                <form action="quiz.php" method="get">
+                <form action="perguntas.php" method="get">
                     <input class="firstLoginJogar my-3" type="submit" value="Jogar">
                     <input type="hidden" name="id" value="1">
                 </form>

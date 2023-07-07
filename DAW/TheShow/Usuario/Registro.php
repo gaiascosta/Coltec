@@ -1,6 +1,6 @@
 <?php 
     //Adiciona o usuário no arquivo e já inicia a sessão
-    require "Usuario.php";
+    require "User.php";
     class Registro{
         private $login;
 	    private $email;

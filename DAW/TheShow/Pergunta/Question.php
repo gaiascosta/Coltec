@@ -1,5 +1,5 @@
 <?php
-class Pergunta{
+class Quiz{
     public $enunciado;
     public $alternativas;
     public $resposta;

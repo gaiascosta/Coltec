@@ -1,11 +1,11 @@
 [
     {
-        "enunciado": "Qual a moeda oficial do Reino Unido?",
+        "enunciado": "Qual é a menor unidade de medida de tempo?",
         "alternativas": [
-            "Libra Esterlina",
-            "Euro",
-            "Franco",
-            "Peso"
+            "Zeptosegundo",
+            "Microsegundo",
+            "Picosegundo",
+            "Nanosegundo"
         ],
         "resposta": 1
     },
