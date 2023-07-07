@@ -48,18 +48,18 @@ body {
     margin-left: 15%;
 }
 
-.divTitulo,
-.divLogin {
+.divTitulo, .divLogin {
     width: 400px;
 }
 
 .pv {
     font-family: mainShowFont;
     position: absolute;
-    top: 36%;
-    left: 34%;
+    top: 32%;
+    left: 15%;
     font-size: 150px;
 }
+
 
 .voltar {
     font-family: loginFont;

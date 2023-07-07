@@ -9,7 +9,7 @@
     <title>The Show</title>
 </head>
 <body>
-    <h1 class="pv">perdeu</h1>
+    <h1 class="pv">Errado, BOOM!!!</h1>
     <a href="../nextIndex.php" class="voltar">VOLTAR</a>
     <footer class="theFooter"><?php include("../footer.inc")?></footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"

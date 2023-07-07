@@ -1,33 +1,34 @@
 <?php
-include("Pergunta/perguntas.inc");
 require "Usuario/User.php";
+include("Pergunta/perguntas.inc");
 
 session_start();
 
-//Pega a requisição para definir a pergunta atual
 $id = $_GET['id'] - 1;
 
-$user = new Usuario($_SESSION['logado']['login'], $_SESSION['logado']['senha'], $_SESSION['logado']['nome'], $_SESSION['logado']['email']);
+$numDePerguntas = count(json_decode(file_get_contents("Pergunta/Perguntas.json")));
+$usuario = new Usuario($_SESSION['logadoTrue']['login'], $_SESSION['logadoTrue']['senha'], $_SESSION['logadoTrue']['nome'], $_SESSION['logadoTrue']['email']);
 
-//Se o id for igual ao número de perguntas, a pessoa ganhou
-$numPerguntas = count(json_decode(file_get_contents("Pergunta/Perguntas.json")));
-if ($numPerguntas == $id) {
-    $user->setRecorde($id);
+if ($numDePerguntas == $id) 
+{
+    $usuario->marcaPontuacao($id);
+
     header("Location: Resultado/vitoria.php");
 }
 
-//Se a alternativa marcada na pergunta anterior for a errada,
-//a pessoa perde
-if (isset($_POST['alternativa']) && isset($_POST['resposta'])) {
+if (isset($_POST['opcoes']) && isset($_POST['resposta'])) {
     $resposta = $_POST['resposta'];
-    $escolha = $_POST['alternativa'];
-    if ($escolha != $resposta) {
-        $user->setRecorde($id - 1);
+    $escolha = $_POST['opcoes'];
+    if ($escolha != $resposta) 
+    {
+        $usuario->marcaPontuacao($id - 1);
+
         header("Location: Resultado/derrota.php");
     }
 }
 
-$questao = CarregaPergunta($id, "Pergunta/Perguntas.json");
+$pergunta = CarregaPergunta($id, "Pergunta/Perguntas.json");
+
 ?>
 
 <!DOCTYPE html>
@@ -47,14 +48,14 @@ $questao = CarregaPergunta($id, "Pergunta/Perguntas.json");
     <div class="d-flex justify-content-center align-items-center containerQuiz" >
         <div class="d-flex flex-column">
             <h3 class="questionTitle">
-                <?= $questao->enunciado ?>
+                <?= $pergunta->pergunta ?>
             </h3>
             <form action="perguntas.php?id=<?= $_GET['id'] + 1 ?>" method="post">
-                <input hidden name="resposta" value=<?= $questao->resposta ?>>
+                <input hidden name="resposta" value=<?= $pergunta->resposta ?>>
                 <?php
-                for ($i = 1; $i <= sizeof($questao->alternativas); $i++) {
-                    echo "<input type='radio' name='alternativa' value='{$i}' required>
-                        <label class='perguntinhas' for='{$i}'>{$questao->alternativas[$i - 1]}</label>";
+                for ($i = 1; $i <= sizeof($pergunta->opcoes); $i++) {
+                    echo "<input type='radio' name='opcoes' value='{$i}' required>
+                        <label class='perguntinhas' for='{$i}'>{$pergunta->opcoes[$i - 1]}</label>";
                 }
                 ?>
                 <input type="submit" value="Enviar">

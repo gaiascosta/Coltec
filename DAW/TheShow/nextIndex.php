@@ -1,16 +1,15 @@
 <?php
+include("Pergunta/perguntas.inc");
 require "Usuario/Login.php";
 require "Usuario/Registro.php";
-include("Pergunta/perguntas.inc");
-//Cada uma recebe os dados de uma página específica para poder
-//chamar as funções de criação de sessão
-session_start();
-if (isset($_POST['log'])) {
-    $login = new Login($_POST['login'], $_POST['senha']);
-}
 
+session_start();
+
+if (isset($_POST['log'])) {
+    $login = new Login($_POST['senha'], $_POST['login']);
+}
 if (isset($_POST['reg'])) {
-    $registro = new Registro($_POST['novoLogin'], $_POST['email'], $_POST['nome'], $_POST['novaSenha']);
+    $registro = new Registro($_POST['novoLogin'], $_POST['novaSenha'], $_POST['email'], $_POST['nome']);
 }
 
 ?>
@@ -35,7 +34,7 @@ if (isset($_POST['reg'])) {
         </div>
         <div class="theMiddle"></div>
         <div class="divLogin d-flex flex-column">
-            <?php if (!isset($_SESSION['logado'])): ?>
+            <?php if (!isset($_SESSION['logadoTrue'])): ?>
                 <a class="firstLogin my-3" href="Usuario/Logar.php">Login</a>
                 <a class="firstLogin my-3" href="Usuario/Registrar.php">Cadastro</a>
             <?php else: ?>

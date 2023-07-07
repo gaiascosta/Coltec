@@ -1,13 +1,12 @@
 <?php
 class Quiz{
-    public $enunciado;
-    public $alternativas;
+    public $pergunta;
+    public $opcoes;
     public $resposta;
-
-    public function __construct($enunciado, $alternativas, $resposta){
-        $this->enunciado = $enunciado;
-        $this->alternativas = $alternativas;
+    public function __construct($resposta, $pergunta, $opcoes){
         $this->resposta = $resposta;
+        $this->pergunta = $pergunta;
+        $this->opcoes = $opcoes;
     }
 }
 ?>

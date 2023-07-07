@@ -1,17 +1,17 @@
 <?php
-if (isset($_SESSION['logado']['login'])) {
-    if (isset($_COOKIE[$_SESSION['logado']['login'] . "tempo"])) {
-        echo "Última sessão: " . $_COOKIE[$_SESSION['logado']['login'] . "tempo"];
+if (isset($_SESSION['logadoTrue']['login'])) {
+    if (isset($_COOKIE[$_SESSION['logadoTrue']['login'] . "tempo"])) {
+        echo "Última sessão: " . $_COOKIE[$_SESSION['logadoTrue']['login'] . "tempo"];
         echo "<br>";
     }
 
-    if (isset($_COOKIE[$_SESSION['logado']['login'] . "lastScore"])) {
-        echo "Última pontuação: " . $_COOKIE[$_SESSION['logado']['login'] . "lastScore"];
+    if (isset($_COOKIE[$_SESSION['logadoTrue']['login'] . "ultimaPontuacao"])) {
+        echo "Última pontuação: " . $_COOKIE[$_SESSION['logadoTrue']['login'] . "ultimaPontuacao"];
         echo "<br>";
     }
 }
 
-if (isset($_SESSION['logado'])) {
-    echo "Recorde: " . $_SESSION['logado']['recorde'];
+if (isset($_SESSION['logadoTrue'])) {
+    echo "Recorde: " . $_SESSION['logadoTrue']['recorde'];
 }
 ?>
