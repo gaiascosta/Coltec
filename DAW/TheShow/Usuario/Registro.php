@@ -1,5 +1,4 @@
 <?php 
-    //Adiciona o usuário no arquivo e já inicia a sessão
     require "User.php";
 
     class Registro{

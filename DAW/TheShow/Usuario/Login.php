@@ -1,16 +1,4 @@
 <?php
-    //Verifica se a senha e usuário batem, se sim, cria uma sessão
-    //com os dados do usuário armazenado no JSON
-
-    function Teste()
-    {
-
-    }
-
-    function testinho()
-    {
-        
-    }
 
     class login{
         private $usuario;
@@ -26,7 +14,6 @@
                 if($this->login == $this->usuarios[$i]['login']){
                     if (password_verify($this->senha, $this->usuarios[$i]['senha'])) {
                         $this->usuario = $this->usuarios[$i];
-                        //Salvando todo o objeto user do JSON na SESSION
                         $_SESSION['logadoTrue'] = $this->usuario;
                         $a++;
                     } else{
@@ -34,7 +21,6 @@
                     }
 			    }
 		    }
-            //Se não existir esse login, retorna à página
             if($a == 0){
                 header("location: Usuario/Logar.php");
             }

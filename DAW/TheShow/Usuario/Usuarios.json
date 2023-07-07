@@ -7,17 +7,10 @@
         "recorde": 5
     },
     {
-        "login": "izaaz",
-        "senha": "$2y$10$h7kSbEw8sg19wRe0OPX22uwYk.m24Jm47B8l4M4lgmnCXIC8UqlmW",
-        "nome": "iza",
-        "email": "a@a",
-        "recorde": 5
-    },
-    {
-        "login": "dado",
-        "senha": "$2y$10$7VjG7TNsRah.wGfzvWk1oup\/ER\/DJIhQV0cwmlFjabtqDmnRzc0TC",
-        "nome": "l",
-        "email": "a@aaa",
+        "login": "gabi",
+        "senha": "$2y$10$QA.tOmJdqhsc7qEo1Pg.TeQivZcdLBlJJ0u6UsiL1nNCGVE0BiFHC",
+        "nome": "Gabi Costa",
+        "email": "gabi@gmail",
         "recorde": 0
     }
 ]

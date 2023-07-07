@@ -44,7 +44,6 @@ $pergunta = CarregaPergunta($id, "Pergunta/Perguntas.json");
 </head>
 
 <body>
-    <!--Carrega as perguntas-->
     <div class="d-flex justify-content-center align-items-center containerQuiz" >
         <div class="d-flex flex-column">
             <h3 class="questionTitle">
