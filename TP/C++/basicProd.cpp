@@ -12,7 +12,5 @@ int main() {
 
     std::cout << "PROD = " << (a * b) << "\n";
  
-    return 0;
- 
     return SUCESSO;
 }
