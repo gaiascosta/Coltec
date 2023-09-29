@@ -1,4 +1,5 @@
 # Atividade 02 - Python
+
 lista = input("Digite suas palavras: ").split( ' ')
 copia_lista = lista.copy()
 
