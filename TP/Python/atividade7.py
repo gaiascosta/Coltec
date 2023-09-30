@@ -1,5 +1,5 @@
 # Atividade 07 - Python
-
+import random
 
 def the_length(the_list, valor):
     resultado = 0
@@ -22,11 +22,27 @@ def as_vogais(the_list):
 
 def o_grupinho(the_list):
     tamanho_grupos = []
+    resultado_lista = []
     for i in the_list:
         if len(i) not in tamanho_grupos:
             tamanho_grupos.append(len(i))
+            resultado_lista.insert(len(tamanho_grupos), [i])
+        else:
+            resultado_lista[tamanho_grupos.index(len(i))].append(i)
+        
     
-    print(tamanho_grupos)
+    return resultado_lista
+
+def la_criptografia(the_list):
+    random_num = random.randint(0, 10)
+    lista_final = []
+    for name in the_list:
+        new_name = ''
+        for c in name:
+            new_name = new_name + chr(ord(c) + random_num)
+        lista_final.append(new_name)
+    return lista_final, random_num
+
    
 #-------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -56,10 +72,10 @@ def chamaFuncao():
             print(as_vogais(the_list))
             escolha = imprimeMenu()
         elif(escolha == 3):
-            o_grupinho(the_list)
+            print(o_grupinho(the_list))
             escolha = imprimeMenu()
         elif(escolha == 4):
-            #
+            print(la_criptografia(the_list))
             escolha = imprimeMenu()
     print("¡Hasta la vista, Baby!")
 
