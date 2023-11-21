@@ -1,0 +1,1 @@
+SELECT first_name FROM customer, rental WHERE rental.customer_id = customer.customer_id AND rental_id = 0 GROUP BY first_name;
