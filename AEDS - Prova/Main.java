@@ -2,7 +2,7 @@
 // Data: 26/10/2022
 // PROVA AEDS
 
-package PROVA;
+package AEDS-PROVA;
 import java.util.Scanner;
 
 

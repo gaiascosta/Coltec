@@ -1,0 +1,60 @@
+@font-face {
+    font-family: emerald;
+    src: url(LTCushion-Medium.ttf);
+}
+
+.btn.dropdown-toggle  {
+    width:150px;
+    text-align:left;
+}
+
+span.caret {
+    position: absolute;
+    left: 90%;
+    top: 45%;
+}
+
+label {
+    padding-top:5px;
+}
+
+.form-label {
+    padding-left:0px !important;
+}
+
+img {
+    width:140px;
+    height:140px;
+}
+
+.btn-success {
+    background-color: rgba(220,20,60, 0.9)!important;
+    box-shadow: 0.3em 0.3em rgb(196, 18, 53);
+    border: solid 0.2em;
+    border-color: rgb(196, 18, 53)!important;
+}
+
+.btn-success:hover {
+    background-color: crimson!important;
+    box-shadow: 0.2em 0.2em rgb(148, 13, 40);
+    border: solid 0.2em;
+    border-color: rgb(148, 13, 40)!important;
+}
+
+img.track {
+    border: 1px solid #8a8a8a;
+}
+
+body{
+    background-image: url("back.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: emerald;
+}
+
+.allContainer{
+    border: solid midnightblue;
+    border-radius: 0.4em;
+    margin: 2em;
+    background-color: rgba(255, 255, 255, 0.8);
+}
